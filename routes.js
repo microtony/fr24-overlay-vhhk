@@ -167,7 +167,6 @@
 
     fixes.term.MYWAY = fix(20.196111, 112.718889, 'MYWAY');
 
-    fixes.term.DULOP = fix(18.236667, 114.543333, 'DULOP');
     fixes.term.CARSO = fix(19.000000, 114.710556, 'CARSO');
     fixes.term.HOCKY = fix(20.596944, 114.574722, 'HOCKY');
     fixes.term.CYBER = fix(20.847222, 114.553056, 'CYBER');
@@ -315,6 +314,94 @@
     // B1
     fixes.airway.LUCAS = fix(24.480833, 120.951389, 'LUCAS');
     
+    // manila fir
+    /* 
+    A461 BELOL IDUMA SHL YIN BUBDA LIG
+    A470 MAGOG DOTMI BEBEM SWA IKATA TEBON XLN FQG LJG DAGMO
+    B330 TAMOT POU GYA MUBEL QP MAMSI SJG ELKAL
+    G471 POU SHL LMN XEBUL EGEDA PLT
+    G586 YIN NODOG QP MMAMSI SJG LAGEX
+    R200 OLDID BEBEM SUMDO OVGOT VIPAP GLN ZUH ADBIN MEPOG BIGRO LH
+    R473 SIERA ZUH VIBOS POU CON NOLON WYN NNX BEMAG LIG
+    R343 ONEMI VQ MAMSI ENKUS LBN SARUG NNG
+    R474 GYA OSIKA VAPNA NNG XEREN NL TEBAK
+    W2 LBN MOTOM JW PA SJG
+    W6 LATOP NLG SAREX CON
+    W7 POU SAREX ZUH
+    W18 TAMOT NLG UBLIM NOMAR SANIP WYN
+    W19 POU NOMAR BILAT MABAG PLT OSONO
+    W20 MABAG NOLON
+    W21 NUSLA CEN MIPAG GLN
+    W22 GLN IDUMA SHL NUSLA TEPID YIN
+    W23 NLG ZUH
+    W44 MABAG IGONO CON
+    W68 TAMOT IDUMA
+    W70 NYB LIDLU PEGDU BHY
+    W90 NOLON TEPID POU
+    W130 LANDA UJ
+    W501 IDUMA KEVAR
+    W509 GLN KEVAR NLG
+    W552 BIGRO UJ ROMEO
+    W553 UJ ZUH
+    N892 MONBO MIGUG
+    */
+    fixes.airway.MEVIN = fix(21, 122.55, 'MEVIN');
+    fixes.airway.AGVAR = fix(19.4141, 120.6285, 'AGVAR');
+    fixes.airway.ALDIS = fix(18.5979, 119.6636, 'ALDIS');
+    fixes.airway.AVMUP = fix(17.9933, 118.9586, 'AVMUP');
+    fixes.airway.AKOTA = fix(16.4620, 117.2067, 'AKOTA');
+    fixes.airway.DABGI = fix(14.1779, 114.6728, 'DABGI');
+    fixes.airway.EMPUL = fix(13.9950, 114.6786, 'EMPUL');
+    fixes.airway.MIKIN = fix(19.3352, 118.1098, 'MIKIN');
+    fixes.airway.MUMOT = fix(19.0286, 117.7897, 'MUMOT');
+    fixes.airway.MAVRA = fix(17.7778, 116.5020, 'MAVRA');
+    fixes.airway.ATBUD = fix(15.9005, 114.6178, 'ATBUD');
+    fixes.airway.KAPOH = fix(18.6793, 120.5692, 'KAPOH');
+    fixes.airway.LAO = fix(18.1788, 120.5291, 'LAO');
+    fixes.airway.DEMSA = fix(18.4064, 120.0607, 'DEMSA');
+    fixes.airway.SAN = fix(16.7284, 120.3581, 'SAN');
+    fixes.airway.TAREM = fix(15.6743, 120.2862, 'TAREM');
+    fixes.airway.MINIO = fix(18.5955, 120.8222, 'MINIO');
+    fixes.airway.TADAO = fix(18.3872, 120.6755, 'TADAO');
+    fixes.airway.GUKUM = fix(14.1956, 116.9172, 'GUKUM');
+    fixes.airway.SOMAR = fix(14.4057, 118.2870, 'SOMAR');
+    fixes.airway.CALDO = fix(14.5604, 119.3326, 'CALDO');
+  
+    // sanya, ho chi minh, vietnam
+    fixes.airway.MIGUG = fix(15.273, 114, 'MIGUG');
+    fixes.airway.MONBO = fix(14.5, 113.428333, 'MONBO');
+    fixes.airway.MESOX = fix(13.98, 113.0450, 'MESOX');
+    fixes.airway.DONDA = fix(14.703333, 112.0216667, 'DONDA');
+    fixes.airway.DAMEL = fix(13.9783, 111.51, 'DAMEL');
+    fixes.airway.EGEMU = fix(17, 112.28333, 'EGEMU');
+    fixes.airway.EXOTO = fix(15.3583, 111.05, 'EXOTO');
+    fixes.airway.VEPAM = fix(13.9667, 110, 'VEPAM');
+    fixes.airway.LENKO = fix(17.416667, 110.3, 'LENKO');
+    fixes.airway.BUNTA = fix(16.833333, 109.395, 'BUNTA');
+    fixes.airway.DAN = fix(16.0528, 108.1982, 'DAN');
+    fixes.airway.PCA = fix(13.9572, 109.0425, 'PCA');
+    fixes.airway.GIVIV = fix(20.953333, 111.055, 'GIVIV');
+    fixes.airway.LH = fix(21.135, 110.3333, 'LH');
+    fixes.airway.NYB = fix(20.015, 110.136667, 'NYB');
+    fixes.airway.GIVIL = fix(19.25, 109.833333, 'GIVIL');
+    fixes.airway.SAMAS = fix(20.505, 110.495, 'SAMAS');
+    fixes.airway.WL = fix(18.488333, 109.403333, 'WL');
+    fixes.airway.SYX = fix(18.31, 109.173333, 'SYX');
+    fixes.airway.OMGEN = fix(17.666667, 109.165, 'OMGEN');
+    fixes.airway.SAGSU = fix(17.501667, 109.163333, 'SAGSU');
+    fixes.airway.ASSAD = fix(18.341667, 107.681667, 'ASSAD');
+    fixes.airway.XONUS = fix(18.07, 107.2331, 'XONUS');
+    fixes.airway.HATIN = fix(18.4669, 107.0489, 'HATIN');
+    fixes.airway.BIGRO = fix(21.57, 111.826667, 'BIGRO');
+    fixes.airway.ARESI = fix(13.9733, 114.4500, 'ARESI');
+
+    //guangzhou west
+    fixes.airway.BHY = fix(21.586667, 109.426667, 'BHY');
+    fixes.airway.ALEKI = fix(21.856667, 109.1, 'ALEKI');
+    fixes.airway.NIKUK = fix(22.13, 108.763333, 'NIKUK');
+    fixes.airway.NNG = fix(22.605, 108.175, 'NNG');
+    fixes.airway.PEGDU = fix(20.883333, 109.383333, 'PEGDU');
+    fixes.airway.LIDLU = fix(20.5, 109.716667, 'LIDLU');
     
     var route = function(type, path) {
         var options = colors[type];
@@ -428,12 +515,11 @@
 
     routes.transit.KAPLI = route('transit', [fixes.term.ALLEY, fixes.term.KAPLI, fixes.term.RAMUS, fixes.term.ARROW, fixes.term.IDOSI]);
 
-    routes.airway.L642 = route('airway', [fixes.term.EPDOS, fixes.airway.ENBOK, fixes.airway.EPKAL]);
-    routes.airway.M771 = route('airway', [fixes.term.DUMOL, fixes.airway.DULOP, fixes.airway.DOSUT]);
-    routes.airway.M772 = route('airway', [fixes.airway.DULOP, fixes.airway.ASOBA]);
+    routes.airway.L642 = route('airway', [fixes.term.EPDOS, fixes.airway.ENBOK, fixes.airway.EPKAL, fixes.airway.EGEMU, fixes.airway.EXOTO, fixes.airway.VEPAM]);
+    routes.airway.M771 = route('airway', [fixes.term.DUMOL, fixes.airway.DULOP, fixes.airway.DOSUT, fixes.airway.DONDA, fixes.airway.DAMEL]);
+    routes.airway.M772 = route('airway', [fixes.airway.DULOP, fixes.airway.ASOBA, fixes.airway.ATBUD, fixes.airway.DABGI, fixes.airway.EMPUL]);
     routes.airway.Q1 = route('starterm', [fixes.airway.DULOP, fixes.term.CARSO]);
-    routes.airway.A1 = route('airway', [fixes.term.IDOSI, fixes.airway.IKELA]);
-    
+    routes.airway.A1 = route('airway', [fixes.term.IDOSI, fixes.airway.IKELA, fixes.airway.LENKO, fixes.airway.BUNTA, fixes.airway.DAN]);
     // Taipei FIR
     routes.airway.A1NE = route('airway', [fixes.term.ELATO, fixes.airway.ANPOG, fixes.airway.KADLO, fixes.airway.MKG, fixes.airway.SWORD, fixes.airway.HLG, fixes.airway.APU, fixes.airway.ANNNA, fixes.airway.DRAKE, fixes.airway.AISAR, fixes.airway.OSTAR, fixes.airway.BULAN]);
     routes.airway.M750 = route('airway', [fixes.term.ENVAR, fixes.airway.DADON, fixes.airway.EXTRA, fixes.airway.RENOT, fixes.airway.TONGA, fixes.airway.TOROX, fixes.airway.ANLOT, fixes.airway.PILOX, fixes.airway.SANAS, fixes.airway.KUDOS, fixes.airway.LEKOS, fixes.airway.MORSU, fixes.airway.MOLKA]);
@@ -457,6 +543,23 @@
     routes.airway.R595 = route('airway', [fixes.airway.APU, fixes.airway.KUDOS, fixes.airway.GRACE, fixes.airway.LOTTO, fixes.airway.PARTO, fixes.airway.BRENT, fixes.airway.SEDKU]);
     routes.airway.J1 = route('airway', [fixes.term.KAPLI, fixes.airway.TNN]);
     
+    // Manila FIR
+    routes.airway.B462 = route('airway', [fixes.airway.MEVIN, fixes.airway.MINIO, fixes.airway.TADAO, fixes.airway.LAO]);
+    routes.airway.L625 = route('airway', [fixes.airway.MEVIN, fixes.airway.AGVAR, fixes.airway.ALDIS, fixes.airway.AVMUP, fixes.airway.AKOTA, fixes.airway.DABGI, fixes.airway.ARESI]);
+    routes.airway.N892 = route('airway', [fixes.airway.KABAM, fixes.airway.MIKIN, fixes.airway.MUMOT, fixes.airway.MAVRA, fixes.airway.ATBUD, fixes.airway.MIGUG, fixes.airway.MONBO, fixes.airway.MESOX]);
+    routes.airway.M646 = route('airway', [fixes.airway.POTIB, fixes.airway.AGVAR, fixes.airway.KAPOH, fixes.airway.LAO]);
+    routes.airway.M501 = route('airway', [fixes.term.NOMAN, fixes.airway.MIKIN, fixes.airway.ALDIS, fixes.airway.DEMSA, fixes.airway.LAO]);
+    routes.airway.A461 = route('airway', [fixes.term.NOMAN, fixes.airway.MUMOT, fixes.airway.AVMUP, fixes.airway.SAN]);
+    routes.airway.W16 = route('airway', [fixes.airway.AVMUP, fixes.airway.TAREM]);
+    routes.airway.M583 = route('airway', [fixes.term.SABNO, fixes.airway.MAVRA, fixes.airway.AKOTA, fixes.airway.SOMAR]);
+    routes.airway.M574 = route('airway', [fixes.airway.AKOTA, fixes.airway.GUKUM]);
+    routes.airway.W3 = route('airway', [fixes.airway.AKOTA, fixes.airway.CALDO]);
+    // sanya FIR
+    routes.airway.A202 = route('airway', [fixes.term.SIKOU, fixes.airway.SAMAS, fixes.airway.ASSAD, fixes.airway.XONUS]);
+    routes.airway.A206 = route('airway', [fixes.airway.ASSAD, fixes.airway.HATIN]);
+    routes.airway.G221 = route('airway', [fixes.airway.BIGRO, fixes.airway.GIVIV, fixes.airway.SAMAS, fixes.airway.NYB, fixes.airway.GIVIL, fixes.airway.WL, fixes.airway.SYX, fixes.airway.OMGEN, fixes.airway.SAGSU, fixes.airway.BUNTA, fixes.airway.PCA]);    
+    routes.airway.R339 = route('airway', [fixes.term.SIKOU, fixes.airway.GIVIV, fixes.airway.LH, fixes.airway.BHY, fixes.airway.ALEKI, fixes.airway.NIKUK, fixes.airway.NNG]);
+    routes.airway.W70 = route('airway', [fixes.airway.NYB, fixes.airway.LIDLU, fixes.airway.PEGDU, fixes.airway.BHY]);
     var updateViews = function() {
         var show07a = [routes.sid.RWY07R2, routes.sid.RWY07L2, routes.sid.RWY07E, routes.sid.OCEAN2A, routes.sid.LAKES2A, routes.sid.BEKOL3A];
         var show07b = [routes.sid.ATENA2A, routes.sid.RASSE3A, routes.sid.LOGAN3A, fixes.sid.COLEY];
@@ -468,9 +571,9 @@
         var show34u = [routes.sid.VMMCU1, routes.sid.VMMCU2, routes.sid.ALLEY2U, fixes.sid.DOCTA];
         var show34c = [routes.sid.VMMC34, fixes.sid.MC411, routes.star.SMT4A, routes.star.CHALI4A, routes.app.RWY34, routes.app.RWY34A, routes.app.RWY34B, routes.app.RWY34C, fixes.app.ROMEO, fixes.sid.LATOP, fixes.sid.MC420, fixes.star.MC611];
         var show16 = [routes.sid.VMMCP1, routes.sid.VMMCP2, routes.sid.ALLEY2P, fixes.sid.MULET, routes.star.SMT5B, routes.star.CHALI5B, routes.app.RWY16, routes.app.RWY16A, fixes.star.MC513, fixes.star.INDUS];
-        var showmacau = [routes.sidterm.VMMC, routes.starterm.J103A, routes.starterm.J103B, fixes.star.MC611, fixes.star.HAZEL, fixes.star.MC513, fixes.sid.PAPA, fixes.star.MC601, fixes.sid.PAPA, fixes.star.HAZEL];
-        var showterm = [routes.starterm.J104, routes.starterm.J103, routes.starterm.J101, fixes.term.TAPPO, fixes.term.PICTA, , fixes.term.RAGSO, fixes.term.DASON, fixes.term.COTON, fixes.star.CHALI, fixes.star.RUNLI,
-        fixes.term.NEDLE, fixes.term.PONTI, fixes.term.BUMDI, fixes.term.ROBIN, fixes.term.ARROW, fixes.term.ISBAN];
+        var showmacau = [routes.sidterm.VMMC, routes.starterm.J103A, routes.starterm.J103B, fixes.star.RUNLI, fixes.star.MC611, fixes.star.HAZEL, fixes.star.MC513, fixes.sid.PAPA, fixes.star.MC601, fixes.sid.PAPA, fixes.star.HAZEL];
+        var showterm = [routes.starterm.J104, routes.starterm.J103, routes.starterm.J101, fixes.term.TAPPO, fixes.term.PICTA, , fixes.term.RAGSO, fixes.term.DASON, fixes.term.COTON, fixes.star.CHALI, 
+        fixes.term.NEDLE, fixes.term.PONTI, fixes.term.BUMDI, fixes.term.ROBIN, fixes.term.ARROW, fixes.term.ISBAN, fixes.term.TUBBY];
         
         show07a.forEach(function(e) { e.setVisible( modevhhh == 1 ); });
         show07b.forEach(function(e) { e.setVisible( modevhhh == 2 ); });

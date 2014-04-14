@@ -722,7 +722,7 @@
         showhold5.forEach(function(e) { e.setVisible( modeohold >= 2); });
     };
     $('#secondaryView').empty();
-    $('#secondaryView').append('<style>.overlay-option { margin: 4px; border: 1px solid #112244; background-color: #FFFFFF; height: 26px } .overlay-option-header { float: left; height: 100%; width: 50%; box-sizing: border-box; padding: 6px 4px 0; background-color: #285599; color: #CCE5F5; font-size: 11px; font-family: Arial } .overlay-option select { float: left; width: 50%; height: 100%; border: 0px; font-size: 11px; font-family: Arial }</style>');
+    $('#secondaryView').append('<style>.overlay-option { margin: 4px; border: 1px solid #112244; background-color: #FFFFFF; height: 24px } .overlay-option-header { float: left; height: 100%; width: 50%; box-sizing: border-box; -moz-box-sizing: border-box; padding: 5px 4px 0; background-color: #285599; color: #CCE5F5; font-size: 11px; font-family: Arial } .overlay-option select { float: left; width: 50%; height: 100%; border: 0px; font-size: 11px; font-family: Arial }</style>');
     var container;
     var select;
     container = $('<div class="overlay-option"><div class="overlay-option-header">Hong Kong</div></div>');

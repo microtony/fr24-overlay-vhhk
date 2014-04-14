@@ -1,8 +1,7 @@
 (function() {
-    var modevhhh = 1, modevmmc = 0, modeterm = 1;
     var colors = {
         app : { strokeColor: '#FFFFFF', strokeOpacity: 0.5, strokeWeight: 1 },
-        app2 : { strokeOpacity: 0, icons : [{ icon: { path: 'M 0,-5 0,5', strokeColor : '#FFFFFF', strokeOpacity: 0.5, scale: 1 }, offset: '0', repeat: '20px' }] },
+        app2 : { strokeOpacity: 0, icons : [{ icon: { path: 'M 0,-4 0,4', strokeColor : '#FFFFFF', strokeOpacity: 0.5, scale: 1 }, offset: '0', repeat: '14px' }] },
         star: { strokeOpacity: 0, icons : [{ icon: { path: 'M 0,-2, 0,2', strokeColor : '#66FF66', strokeOpacity: 0.6, scale: 1 }, offset: '0', repeat: '7px' }] },
         star2: { strokeOpacity: 0, icons : [{ icon: { path: 'M 0,-5 0,5', strokeColor : '#66CCFF', strokeOpacity: 0.5, scale: 1 }, offset: '0', repeat: '16px' }] },
         starterm : { strokeOpacity: 0, icons : [{ icon: { path: 'M 0,-2, 0,2', strokeColor : '#66FF66', strokeOpacity: 0.5, scale: 1 }, offset: '0', repeat: '7px' }] },
@@ -26,6 +25,9 @@
       } else {
         return new google.maps.Marker({position: pos, icon: noicon, map: map});
       }
+    }
+    var pos = function(lat, lng) {
+        return new google.maps.LatLng(lat, lng);
     }
 
     var fixes = { app : {}, star : {}, term: {}, rwy: {}, sid: {}, airway: {} };
@@ -315,36 +317,6 @@
     fixes.airway.LUCAS = fix(24.480833, 120.951389, 'LUCAS');
     
     // manila fir
-    /* 
-    A461 BELOL IDUMA SHL YIN BUBDA LIG
-    A470 MAGOG DOTMI BEBEM SWA IKATA TEBON XLN FQG LJG DAGMO
-    B330 TAMOT POU GYA MUBEL QP MAMSI SJG ELKAL
-    G471 POU SHL LMN XEBUL EGEDA PLT
-    G586 YIN NODOG QP MMAMSI SJG LAGEX
-    R200 OLDID BEBEM SUMDO OVGOT VIPAP GLN ZUH ADBIN MEPOG BIGRO LH
-    R473 SIERA ZUH VIBOS POU CON NOLON WYN NNX BEMAG LIG
-    R343 ONEMI VQ MAMSI ENKUS LBN SARUG NNG
-    R474 GYA OSIKA VAPNA NNG XEREN NL TEBAK
-    W2 LBN MOTOM JW PA SJG
-    W6 LATOP NLG SAREX CON
-    W7 POU SAREX ZUH
-    W18 TAMOT NLG UBLIM NOMAR SANIP WYN
-    W19 POU NOMAR BILAT MABAG PLT OSONO
-    W20 MABAG NOLON
-    W21 NUSLA CEN MIPAG GLN
-    W22 GLN IDUMA SHL NUSLA TEPID YIN
-    W23 NLG ZUH
-    W44 MABAG IGONO CON
-    W68 TAMOT IDUMA
-    W70 NYB LIDLU PEGDU BHY
-    W90 NOLON TEPID POU
-    W130 LANDA UJ
-    W501 IDUMA KEVAR
-    W509 GLN KEVAR NLG
-    W552 BIGRO UJ ROMEO
-    W553 UJ ZUH
-    N892 MONBO MIGUG
-    */
     fixes.airway.MEVIN = fix(21, 122.55, 'MEVIN');
     fixes.airway.AGVAR = fix(19.4141, 120.6285, 'AGVAR');
     fixes.airway.ALDIS = fix(18.5979, 119.6636, 'ALDIS');
@@ -402,6 +374,87 @@
     fixes.airway.NNG = fix(22.605, 108.175, 'NNG');
     fixes.airway.PEGDU = fix(20.883333, 109.383333, 'PEGDU');
     fixes.airway.LIDLU = fix(20.5, 109.716667, 'LIDLU');
+
+    
+    //guangzhou north, east
+    fixes.airway.IDUMA = fix(22.896667, 113.95167, 'IDUMA');
+    fixes.airway.SHL = fix(23.091667, 113.85, 'SHL');
+    fixes.airway.YIN = fix(24.19, 113.415, 'YIN');
+    fixes.airway.BUBDA = fix(25.868333, 113.463333, 'BUBDA');
+    fixes.airway.LIG = fix(27.648333, 113.516667, 'LIG');
+    fixes.airway.BEBEM = fix(22.95, 116.36, 'BEBEM');
+    fixes.airway.SWA = fix(23.44, 116.766667, 'SWA');
+    fixes.airway.IKATA = fix(23.765, 117.136667, 'IKATA');
+    fixes.airway.TEBON = fix(24.116667, 117.533333, 'TEBON');
+    fixes.airway.XLN = fix(24.565, 118.015, 'XLN');
+    fixes.airway.FQG = fix(25.74, 119.385, 'FQG');
+    fixes.airway.LJG = fix(26.22, 119.548333, 'LJG');
+    fixes.airway.DAGMO = fix(27.436667, 119.556667, 'DAGMO');
+    fixes.airway.SUMDO = fix(22.900000 , 115.881667 , 'SUMDO');
+    fixes.airway.OVGOT = fix(22.783333, 114.75, 'OVGOT');
+    fixes.airway.VIPAP = fix(22.761667, 114.531667, 'VIPAP');
+    fixes.airway.GLN = fix(22.708333, 114.033333, 'GLN');
+    fixes.airway.ADBIN = fix(21.968333, 112.821667, 'ADBIN');
+    fixes.airway.MEPOG = fix(21.858333, 112.546667, 'MEPOG');
+    
+    fixes.airway.POU = fix(23.021667, 113.19, 'POU');
+    fixes.airway.GYA = fix(23.07, 112.486667, 'GYA');
+    fixes.airway.MUBEL = fix(24.21, 111.27, 'MUBEL');
+    fixes.airway.QP = fix(24.67, 110.776667, 'QP');
+    fixes.airway.MAMSI = fix(25.205, 110.211667, 'MAMSI');
+    fixes.airway.ELKAL = fix(26.096667, 108.396667, 'ELKAL');
+    fixes.airway.LMN = fix(23.648333, 114.326667, 'LMN');
+    fixes.airway.XEBUL = fix(24.283333, 114.85, 'XEBUL');
+    fixes.airway.EGEDA = fix(25.348333, 115.111667, 'EGEDA');
+    fixes.airway.PLT = fix(25.808333, 114.875, 'PLT');
+    fixes.airway.NODOG = fix(24.576667, 111.295, 'NODOG');
+    fixes.airway.LAGEX = fix(26.43, 109.026667, 'LAGEX');
+    fixes.airway.SJG = fix(25.776667, 109.61, 'SJG');
+    fixes.airway.PA = fix(25.405, 110.06, 'PA');
+    fixes.airway.JW = fix(25.008333, 110.016667, 'JW');
+    fixes.airway.MOTOM = fix(24.69, 109.7933333, 'MOTOM');
+    
+    fixes.airway.ZUH = fix(22.221667, 113.466667, 'ZUH');
+    fixes.airway.VIBOS = fix(22.625000, 113.328333, 'VIBOS');
+    fixes.airway.CON = fix(23.588333, 113.586667, 'CON');
+    fixes.airway.NOLON = fix(24.108333, 113.946667, 'NOLON');
+    fixes.airway.NF = fix(27.208333, 116.558333, 'NF');
+    fixes.airway.WYN = fix(24.35, 114.111667, 'WYN');
+    fixes.airway.NNX = fix(25.095, 114.273333, 'NNX');
+    fixes.airway.BEMAG = fix(26.018333, 114.001667, 'BEMAG');
+    fixes.airway.LIG = fix(27.648333, 113.516667, 'LIG');
+    fixes.airway.ONEMI = fix(25.751667, 110.608333, 'ONEMI');
+    fixes.airway.VQ = fix(25.561667, 110.476667, 'VQ');
+    fixes.airway.ENKUS = fix(24.678333, 109.82, 'ENKUS');
+    fixes.airway.LBN = fix(23.763333, 109.146667, 'LBN');
+    fixes.airway.SARUG = fix(23.245, 108.71, 'SARUG');
+    fixes.airway.NNG = fix(22.605, 108.175, 'NNG');
+    fixes.airway.OSIKA = fix(22.863333, 110.555, 'OSIKA');
+    fixes.airway.VAPNA = fix(22.708333, 109.12, 'VAPNA');
+    fixes.airway.XEREN = fix(22.428333, 107.255, 'XEREN');
+    fixes.airway.NL = fix(22.35, 106.858333, 'NL');
+    fixes.airway.TEBAK = fix(22.175, 106.675, 'TEBAK');
+    fixes.airway.BIPOP = fix(23.35, 111.148333, 'BIPOP');
+    
+    fixes.airway.SAREX = fix(22.881667, 113.483333, 'SAREX');
+    fixes.airway.UBLIM = fix(22.888333, 113.67, 'UBLIM');
+    fixes.airway.NOMAR = fix(23.508333, 113.856667, 'NOMAR');
+    fixes.airway.SANIP = fix(24.026667, 114.015, 'SANIP');
+    fixes.airway.BILAT = fix(23.868333, 114.146667, 'BILAT');
+    fixes.airway.MABAG = fix(24.313333, 114.506667, 'MABAG');
+    fixes.airway.OSONO = fix(27.765, 115.655, 'OSONO');
+    fixes.airway.NUSLA = fix(23.411667, 113.515, 'NUSLA');
+    fixes.airway.CEN = fix(23.151667, 113.416667, 'CEN');
+    fixes.airway.MIPAG = fix(22.921667, 113.741667, 'MIPAG');
+    fixes.airway.TEPID = fix(23.535, 113.385, 'TEPID');
+    fixes.airway.YIN = fix(24.19, 113.415, 'YIN');
+    fixes.airway.IGONO = fix(23.966667, 114.065, 'IGONO');
+    fixes.airway.ATAGA = fix(24.161667, 113.683333, 'ATAGA');
+    fixes.airway.SULAS = fix(22.916667, 114.221667, 'SULAS');
+    fixes.airway.UBDOB = fix(23.361667, 114.625000, 'UBDOB');
+    fixes.airway.UDUTI = fix(21.85, 111.933333, 'UDUTI');
+    fixes.airway.AVPAM = fix(23.208333, 111.826667, 'AVPAM');
+    fixes.term.LANDA = fix(21.613333, 113.045, 'LANDA');
     
     var route = function(type, path) {
         var options = colors[type];
@@ -409,15 +462,17 @@
         path.forEach(function(e, i) { 
             if (e == undefined) {
                 console.log("Waypoint missing: "+i);
-            } else {
+            } else if (e.getPosition) {
                 path2.push(e.getPosition())
+            } else {
+                path2.push(e);
             }
         });
         options.path = path2;
         options.map = map;
         return new google.maps.Polyline(options);
     };
-    var routes = { app: {}, star: {}, starterm: {}, sid: {}, sidterm: {}, airway: {}, transit: {} };
+    var routes = { app: {}, star: {}, starterm: {}, sid: {}, sidterm: {}, airway: {}, transit: {}, holding: {} };
 
     routes.app.RWY07L = route('app', [fixes.app.LIMES, fixes.app.TONIC, fixes.app.CEDAR, fixes.rwy.RW07L]);
     routes.app.RWY07R = route('app', [fixes.app.STELA, fixes.app.IF07R, fixes.rwy.RW07R]);
@@ -560,20 +615,93 @@
     routes.airway.G221 = route('airway', [fixes.airway.BIGRO, fixes.airway.GIVIV, fixes.airway.SAMAS, fixes.airway.NYB, fixes.airway.GIVIL, fixes.airway.WL, fixes.airway.SYX, fixes.airway.OMGEN, fixes.airway.SAGSU, fixes.airway.BUNTA, fixes.airway.PCA]);    
     routes.airway.R339 = route('airway', [fixes.term.SIKOU, fixes.airway.GIVIV, fixes.airway.LH, fixes.airway.BHY, fixes.airway.ALEKI, fixes.airway.NIKUK, fixes.airway.NNG]);
     routes.airway.W70 = route('airway', [fixes.airway.NYB, fixes.airway.LIDLU, fixes.airway.PEGDU, fixes.airway.BHY]);
-    var updateViews = function() {
-        var show07a = [routes.sid.RWY07R2, routes.sid.RWY07L2, routes.sid.RWY07E, routes.sid.OCEAN2A, routes.sid.LAKES2A, routes.sid.BEKOL3A];
-        var show07b = [routes.sid.ATENA2A, routes.sid.RASSE3A, routes.sid.LOGAN3A, fixes.sid.COLEY];
-        var show07c = [routes.sid.RWY07R1, routes.sid.RWY07L1, routes.app.RWY07L, routes.app.RWY07R, routes.star.ABBEY3A, routes.star.BETTY2A, routes.star.AB2A, routes.star.SIERA6A, routes.star.SIERA6C, routes.star.C2AS6AC, fixes.app.TONIC, fixes.app.STELA, fixes.app.LIMES, fixes.star.GUAVA, fixes.star.SOKOE, fixes.star.SILVA,
-            routes.sid.RWY07LS, routes.sid.RWY07RS, routes.sid.PECAN1A, fixes.sid.PORPA, fixes.sid.ROVER, fixes.sid.ATENA, fixes.sid.RAMEN];
-        var show25 = [routes.app.RWY25R, routes.app.RWY25L, routes.star.ABBEY2B, routes.star.BETTY2B, routes.star.SIERA6B, routes.star.SIERA6D, routes.star.C2BS6BD, fixes.star.GOODI, fixes.star.MONTY, fixes.app.RIVER, fixes.app.LOTUS,
-            routes.sid.RWY25R, routes.sid.RWY25L, routes.sid.RWY25, routes.sid.BEKOL2B, routes.sid.LAKES2B, routes.sid.OCEAN2B, routes.sid.PECAN1B, fixes.sid.PRAWN, fixes.sid.RUMSY, fixes.sid.TUNNA, fixes.sid.TROUT, fixes.sid.SAMON];
-        var show34t = [routes.sid.VMMCT, fixes.sid.CAMRI];
-        var show34u = [routes.sid.VMMCU1, routes.sid.VMMCU2, routes.sid.ALLEY2U, fixes.sid.DOCTA];
-        var show34c = [routes.sid.VMMC34, fixes.sid.MC411, routes.star.SMT4A, routes.star.CHALI4A, routes.app.RWY34, routes.app.RWY34A, routes.app.RWY34B, routes.app.RWY34C, fixes.app.ROMEO, fixes.sid.LATOP, fixes.sid.MC420, fixes.star.MC611];
-        var show16 = [routes.sid.VMMCP1, routes.sid.VMMCP2, routes.sid.ALLEY2P, fixes.sid.MULET, routes.star.SMT5B, routes.star.CHALI5B, routes.app.RWY16, routes.app.RWY16A, fixes.star.MC513, fixes.star.INDUS];
-        var showmacau = [routes.sidterm.VMMC, routes.starterm.J103A, routes.starterm.J103B, fixes.star.RUNLI, fixes.star.MC611, fixes.star.HAZEL, fixes.star.MC513, fixes.sid.PAPA, fixes.star.MC601, fixes.sid.PAPA, fixes.star.HAZEL];
-        var showterm = [routes.starterm.J104, routes.starterm.J103, routes.starterm.J101, fixes.term.TAPPO, fixes.term.PICTA, , fixes.term.RAGSO, fixes.term.DASON, fixes.term.COTON, fixes.star.CHALI, 
+    
+    // guangzhou FIR
+    routes.airway.A461 = route('airway', [fixes.term.BEKOL, fixes.airway.IDUMA, fixes.airway.SHL, fixes.airway.YIN, fixes.airway.BUBDA, fixes.airway.LIG]);
+    routes.airway.A470 = route('airway', [fixes.term.DOTMI, fixes.airway.BEBEM, fixes.airway.SWA, fixes.airway.IKATA, fixes.airway.TEBON, fixes.airway.XLN, fixes.airway.FQG, fixes.airway.LJG, fixes.airway.DAGMO]);
+    routes.airway.A599 = route('airway', [fixes.airway.LBN, fixes.airway.BIPOP, fixes.airway.AVPAM, fixes.airway.GYA]);
+    routes.airway.A599A = route('airway', [fixes.airway.NNX, fixes.airway.PLT, fixes.airway.NF]);
+    routes.airway.R200 = route('airway', [fixes.airway.OLDID, fixes.airway.BEBEM, fixes.airway.SUMDO, fixes.airway.OVGOT, fixes.airway.VIPAP, fixes.airway.GLN, fixes.star.ZUH, fixes.airway.ADBIN, fixes.airway.MEPOG, fixes.airway.BIGRO, fixes.airway.LH]);
+    routes.airway.B330 = route('airway', [fixes.term.TAMOT, fixes.airway.POU, fixes.airway.GYA, fixes.airway.MUBEL, fixes.airway.QP, fixes.airway.MAMSI, fixes.airway.SJG, fixes.airway.ELKAL]);
+    routes.airway.G471 = route('airway', [fixes.airway.POU, fixes.airway.SHL, fixes.airway.LMN, fixes.airway.XEBUL, fixes.airway.EGEDA, fixes.airway.PLT]);
+    routes.airway.G586 = route('airway', [fixes.airway.YIN, fixes.airway.NODOG, fixes.airway.QP]);
+    routes.airway.G586A = route('airway', [fixes.airway.SJG, fixes.airway.LAGEX]);
+    routes.airway.R343 = route('airway', [fixes.airway.ONEMI, fixes.airway.VQ, fixes.airway.MAMSI, fixes.airway.ENKUS, fixes.airway.LBN, fixes.airway.SARUG, fixes.airway.NNG]);
+    routes.airway.R473 = route('airway', [fixes.airway.LIG, fixes.airway.BEMAG, fixes.airway.NNX, fixes.airway.WYN, fixes.airway.NOLON, fixes.airway.CON, fixes.airway.POU, fixes.airway.VIBOS, fixes.airway.ZUH, fixes.term.SIERA]);
+    routes.airway.R474 = route('airway', [fixes.airway.GYA, fixes.airway.OSIKA, fixes.airway.VAPNA, fixes.airway.NNG, fixes.airway.XEREN, fixes.airway.NL, fixes.airway.TEBAK]);
+
+    routes.airway.W2 = route('airway', [fixes.airway.SJG, fixes.airway.PA, fixes.airway.JW, fixes.airway.MOTOM, fixes.airway.LBN]);
+    routes.airway.W6 = route('airway', [fixes.sid.LATOP, fixes.app.NLG, fixes.airway.SAREX, fixes.airway.CON]);
+    routes.airway.W7 = route('airway', [fixes.airway.POU, fixes.airway.SAREX, fixes.star.ZUH]);
+    routes.airway.W18 = route('airway', [fixes.term.TAMOT, fixes.app.NLG, fixes.airway.UBLIM, fixes.airway.NOMAR, fixes.airway.SANIP, fixes.airway.WYN]);
+    routes.airway.W19 = route('airway', [fixes.airway.POU, fixes.airway.NOMAR, fixes.airway.BILAT, fixes.airway.MABAG, fixes.airway.PLT, fixes.airway.OSONO]);
+    routes.airway.W20 = route('airway', [fixes.airway.MABAG, fixes.airway.NOLON]);
+    routes.airway.W21 = route('airway', [fixes.airway.NUSLA, fixes.airway.CEN, fixes.airway.MIPAG, fixes.airway.GLN]);
+    routes.airway.W22 = route('airway', [fixes.airway.GLN, fixes.airway.IDUMA, fixes.airway.SHL, fixes.airway.NUSLA, fixes.airway.TEPID, fixes.airway.YIN]);
+    routes.airway.W23 = route('airway', [fixes.app.NLG, fixes.star.ZUH]);
+    routes.airway.W44 = route('airway', [fixes.airway.MABAG, fixes.airway.IGONO, fixes.airway.CON]);
+    routes.airway.W68 = route('airway', [fixes.term.TAMOT, fixes.airway.IDUMA]);
+    routes.airway.W70 = route('airway', [fixes.airway.NYB, fixes.airway.LIDLU, fixes.airway.PEGDU, fixes.airway.BHY]);
+    routes.airway.W90 = route('airway', [fixes.airway.NOLON, fixes.airway.TEPID, fixes.airway.POU]);
+    routes.airway.W130 = route('airway', [fixes.term.LANDA, fixes.term.UJ]);
+    routes.airway.V5 = route('airway', [fixes.airway.BEMAG, fixes.airway.ATAGA, fixes.airway.CON]);
+    routes.airway.V17 = route('airway', [fixes.airway.GLN, fixes.airway.SULAS, fixes.airway.UBDOB, fixes.airway.XEBUL]);
+    routes.airway.V19 = route('airway', [fixes.airway.LH, fixes.airway.UDUTI, fixes.app.NLG]);
+    routes.airway.V20 = route('airway', [fixes.airway.BIGRO, fixes.airway.UDUTI]);
+    routes.airway.V21 = route('airway', [fixes.airway.AVPAM, fixes.airway.UDUTI, fixes.airway.MEPOG, fixes.term.UJ]);
+    routes.airway.V25 = route('airway', [fixes.airway.AVPAM, fixes.term.UJ]);
+
+    routes.holding.ABBEY = route('star', [pos(22.269093,114.924510),pos(22.277027,114.898600),pos(22.289850,114.880861),pos(22.306100,114.869885),pos(22.324029,114.865765),pos(22.342180,114.868523),pos(22.359100,114.878251),pos(22.373036,114.894990),pos(22.382398,114.920053),pos(22.388114,115.100160),pos(22.380388,115.125868),pos(22.367563,115.143617),pos(22.351312,115.154597),pos(22.333382,115.158717),pos(22.315231,115.155959),pos(22.298311,115.146236),pos(22.284373,115.129507),pos(22.275008,115.104464)]);
+    routes.holding.BETTY = route('star', [pos(21.486275,114.559123),pos(21.511285,114.559919),pos(21.530597,114.568307),pos(21.544837,114.582092),pos(21.553441,114.599493),pos(21.555991,114.619009),pos(21.552006,114.639162),pos(21.540967,114.658153),pos(21.521270,114.674695),pos(21.362783,114.729986),pos(21.337804,114.729049),pos(21.318491,114.720674),pos(21.304250,114.706911),pos(21.295644,114.689540),pos(21.293092,114.670059),pos(21.297074,114.649941),pos(21.308111,114.630981),pos(21.327807,114.614461),pos(21.486305,114.558981)]);
+    routes.holding.CANTO = route('star', [pos(21.650507,113.707590),pos(21.661177,113.731657),pos(21.662990,113.753984),pos(21.658030,113.773900),pos(21.647515,113.790054),pos(21.632500,113.801364),pos(21.613990,113.806699),pos(21.593240,113.804747),pos(21.570587,113.793388),pos(21.452712,113.666790),pos(21.442147,113.642452),pos(21.440330,113.620160),pos(21.445288,113.600273),pos(21.455801,113.584140),pos(21.470815,113.572843),pos(21.489325,113.567512),pos(21.510075,113.569464),pos(21.532728,113.580820)]);
+    routes.holding.DOVAR = route('starterm', [pos(20.860770,115.117046),pos(20.885797,115.116450),pos(20.905491,115.123709),pos(20.920383,115.136620),pos(20.929822,115.153441),pos(20.933319,115.172705),pos(20.930320,115.192969),pos(20.920221,115.212473),pos(20.901356,115.230026),pos(20.745778,115.293882),pos(20.720787,115.294349),pos(20.701093,115.287099),pos(20.686200,115.274209),pos(20.676759,115.257415),pos(20.673260,115.238184),pos(20.676257,115.217954),pos(20.686354,115.198481),pos(20.705217,115.180951)]);
+    routes.holding.EATON = route('starterm', [pos(21.123278,115.717250),pos(21.121264,115.690279),pos(21.126654,115.668710),pos(21.137644,115.651880),pos(21.152658,115.640607),pos(21.170363,115.635520),pos(21.189453,115.637311),pos(21.208331,115.646754),pos(21.226004,115.665714),pos(21.296348,115.827803),pos(21.298525,115.854528),pos(21.293132,115.876122),pos(21.282140,115.892968),pos(21.267125,115.904250),pos(21.249420,115.909340),pos(21.230330,115.907548),pos(21.211452,115.898105),pos(21.193777,115.879149),pos(21.123278,115.717250)]);
+    routes.holding.FISHA = route('starterm', [pos(22.282466,115.336780),pos(22.290400,115.310867),pos(22.303222,115.293126),pos(22.319473,115.282149),pos(22.337402,115.278029),pos(22.355553,115.280787),pos(22.372473,115.290516),pos(22.386409,115.307257),pos(22.395771,115.332322),pos(22.401486,115.512447),pos(22.393760,115.538157),pos(22.380936,115.555908),pos(22.364684,115.566888),pos(22.346755,115.571009),pos(22.328604,115.568251),pos(22.311684,115.558527),pos(22.297746,115.541797),pos(22.288380,115.516750)]);
+    routes.holding.GAMBA = route('starterm', [pos(21.318736,112.926985),pos(21.318478,112.953549),pos(21.311013,112.974422),pos(21.298440,112.989944),pos(21.282408,112.999481),pos(21.264304,113.002558),pos(21.245493,112.998635),pos(21.227639,112.987126),pos(21.211908,112.966290),pos(21.157573,112.797347),pos(21.158008,112.770549),pos(21.165471,112.749697),pos(21.178042,112.734187),pos(21.194073,112.724656),pos(21.212177,112.721580),pos(21.230988,112.725503),pos(21.248841,112.737013),pos(21.264570,112.757857)]);
+    routes.holding.HOCKY = route('starterm', [pos(20.597043,114.574759),pos(20.621199,114.581495),pos(20.638260,114.594262),pos(20.649251,114.611037),pos(20.653994,114.629958),pos(20.652395,114.649472),pos(20.644296,114.668031),pos(20.629567,114.683768),pos(20.606913,114.695054),pos(20.440914,114.710553),pos(20.416770,114.703650),pos(20.399707,114.690903),pos(20.388715,114.674157),pos(20.383970,114.655269),pos(20.385567,114.635789),pos(20.393664,114.617261),pos(20.408392,114.601546),pos(20.431045,114.590273)]);
+    fixes.term.BAKER = fix(21.217193,114.652085);
+    routes.holding.BAKER = route('starterm2', [pos(21.217193,114.652085),pos(21.242202,114.652880),pos(21.261514,114.661253),pos(21.275754,114.675013),pos(21.284359,114.692382),pos(21.286909,114.711862),pos(21.282923,114.731978),pos(21.271884,114.750934),pos(21.252187,114.767445),pos(21.093701,114.822636),pos(21.068721,114.821701),pos(21.049408,114.813340),pos(21.035167,114.799602),pos(21.026561,114.782264),pos(21.024009,114.762818),pos(21.027992,114.742737),pos(21.039029,114.723811),pos(21.058724,114.707321),pos(21.217193,114.652085)]);
+    routes.holding.COMBI = route('starterm2', [pos(21.493427,113.462713),pos(21.493171,113.489307),pos(21.485705,113.510205),pos(21.473132,113.525746),pos(21.457100,113.535294),pos(21.438996,113.538375),pos(21.420186,113.534447),pos(21.402331,113.522924),pos(21.386600,113.502063),pos(21.332265,113.332920),pos(21.332699,113.306091),pos(21.340162,113.285213),pos(21.352733,113.269685),pos(21.368765,113.260143),pos(21.386869,113.257063),pos(21.405679,113.260991),pos(21.423533,113.272515),pos(21.439261,113.293384)]);
+    routes.holding.MYWAY = route('starterm2', [pos(20.196178,112.718650),pos(20.220810,112.714180),pos(20.238848,112.703080),pos(20.251165,112.687433),pos(20.257433,112.669074),pos(20.257432,112.649536),pos(20.250877,112.630342),pos(20.237487,112.613336),pos(20.215840,112.600018),pos(20.051736,112.569216),pos(20.027121,112.573835),pos(20.009082,112.584919),pos(19.996764,112.600540),pos(19.990494,112.618869),pos(19.990493,112.638373),pos(19.997046,112.657536),pos(20.010434,112.674517),pos(20.032079,112.687819)]);
+    
+    routes.holding.ATIKO = route('starterm3', [pos(21.808321,113.540601),pos(21.812545,113.546576),pos(21.814591,113.553785),pos(21.814224,113.561313),pos(21.811490,113.568252),pos(21.806717,113.573765),pos(21.800481,113.577187),pos(21.793534,113.578106),pos(21.786715,113.576410),pos(21.728015,113.535378),pos(21.723803,113.529362),pos(21.721757,113.522157),pos(21.722123,113.514634),pos(21.724857,113.507699),pos(21.729630,113.502189),pos(21.735866,113.498769),pos(21.742812,113.497850),pos(21.749631,113.499545),pos(21.808321,113.540601)]);
+    routes.holding.BUMDI = route('starterm3', [pos(22.360964,114.314582),pos(22.357950,114.307204),pos(22.352741,114.301372),pos(22.346001,114.297818),pos(22.338544,114.296970),pos(22.331268,114.298931),pos(22.325052,114.303464),pos(22.320644,114.310022),pos(22.318577,114.317814),pos(22.323441,114.393286),pos(22.326491,114.400691),pos(22.331700,114.406522),pos(22.338439,114.410076),pos(22.345897,114.410923),pos(22.353173,114.408962),pos(22.359389,114.404428),pos(22.363796,114.397868),pos(22.365863,114.390074)]);
+    routes.holding.CHALI = route('starterm3', [pos(21.295802,113.578037),pos(21.300552,113.584311),pos(21.306979,113.588456),pos(21.314340,113.589992),pos(21.321746,113.588733),pos(21.328304,113.584830),pos(21.333224,113.578755),pos(21.335911,113.571239),pos(21.336041,113.563190),pos(21.313241,113.492159),pos(21.308522,113.485904),pos(21.302095,113.481759),pos(21.294734,113.480223),pos(21.287328,113.481482),pos(21.280770,113.485383),pos(21.275850,113.491457),pos(21.273163,113.498969),pos(21.273032,113.507014)]);
+    //routes.holding.PAPA  = route('app2', [pos(21.977495,113.656071),pos(21.982939,113.651361),pos(21.986543,113.644892),pos(21.987878,113.637483),pos(21.986784,113.630028),pos(21.983390,113.623427),pos(21.978108,113.618476),pos(21.971575,113.615771),pos(21.964577,113.615640),pos(21.898402,113.640197),pos(21.892963,113.644943),pos(21.889359,113.651409),pos(21.888023,113.658812),pos(21.889118,113.666262),pos(21.892511,113.672859),pos(21.897792,113.677807),pos(21.904326,113.680510),pos(21.911324,113.680642)]);
+    
+    routes.holding.TAPPO = route('starterm3', [pos(21.322084,114.241121),pos(21.412995,114.197558),pos(21.483675,114.121583),pos(21.525900,114.024176),pos(21.534579,113.917103),pos(21.508671,113.813301),pos(21.451302,113.725307),pos(21.369392,113.663727),pos(21.272816,113.635959),pos(21.181517,113.644525),pos(21.090898,113.689812),pos(21.020185,113.765549),pos(20.977904,113.862593),pos(20.969157,113.969257),pos(20.995002,114.072697),pos(21.052326,114.160453),pos(21.134214,114.221935),pos(21.230785,114.249695)]);
+    fixes.term.GODEN = fix(20.5765,114.309028);
+    routes.holding.GODEN = route('starterm3', [pos(20.576206,114.310780),pos(20.673071,114.336686),pos(20.754959,114.398011),pos(20.812283,114.485627),pos(20.838128,114.588959),pos(20.829382,114.695523),pos(20.787101,114.792445),pos(20.716388,114.868028),pos(20.625770,114.913175),pos(20.534470,114.921705),pos(20.437895,114.894090),pos(20.355985,114.832924),pos(20.298618,114.745602),pos(20.272711,114.642652),pos(20.281393,114.536469),pos(20.323620,114.439841),pos(20.394300,114.364417),pos(20.484906,114.319312)]);
+    fixes.term.OTKUM = fix(22.0595,114.082194);
+    routes.holding.OTKUM = route('starterm3', [pos(22.059185,114.080300),pos(22.139335,114.017235),pos(22.193763,113.926676),pos(22.216219,113.821447),pos(22.204000,113.714264),pos(22.158582,113.618077),pos(22.085444,113.544491),pos(21.993407,113.502360),pos(21.893564,113.496721),pos(21.805918,113.525581),pos(21.726058,113.590352),pos(21.671581,113.680580),pos(21.649057,113.785390),pos(21.661208,113.892165),pos(21.706570,113.988047),pos(21.779674,114.061474),pos(21.871701,114.103569),pos(21.971544,114.109212),pos(22.059185,114.080300)]);
+    
+    var show07a = [routes.sid.RWY07R2, routes.sid.RWY07L2, routes.sid.RWY07E, routes.sid.OCEAN2A, routes.sid.LAKES2A, routes.sid.BEKOL3A];
+    var show07b = [routes.sid.ATENA2A, routes.sid.RASSE3A, routes.sid.LOGAN3A, fixes.sid.COLEY];
+    var show07c = [routes.sid.RWY07R1, routes.sid.RWY07L1, routes.app.RWY07L, routes.app.RWY07R, routes.star.ABBEY3A, routes.star.BETTY2A, routes.star.AB2A, routes.star.SIERA6A, routes.star.SIERA6C, routes.star.C2AS6AC, fixes.app.TONIC, fixes.app.STELA, fixes.app.LIMES, fixes.star.GUAVA, fixes.star.SOKOE, fixes.star.SILVA,
+        routes.sid.RWY07LS, routes.sid.RWY07RS, routes.sid.PECAN1A, fixes.sid.PORPA, fixes.sid.ROVER, fixes.sid.ATENA, fixes.sid.RAMEN];
+    var show25 = [routes.app.RWY25R, routes.app.RWY25L, routes.star.ABBEY2B, routes.star.BETTY2B, routes.star.SIERA6B, routes.star.SIERA6D, routes.star.C2BS6BD, fixes.star.GOODI, fixes.star.MONTY, fixes.app.RIVER, fixes.app.LOTUS,
+        routes.sid.RWY25R, routes.sid.RWY25L, routes.sid.RWY25, routes.sid.BEKOL2B, routes.sid.LAKES2B, routes.sid.OCEAN2B, routes.sid.PECAN1B, fixes.sid.PRAWN, fixes.sid.RUMSY, fixes.sid.TUNNA, fixes.sid.TROUT, fixes.sid.SAMON];
+    var show34t = [routes.sid.VMMCT, fixes.sid.CAMRI];
+    var show34u = [routes.sid.VMMCU1, routes.sid.VMMCU2, routes.sid.ALLEY2U, fixes.sid.DOCTA];
+    var show34c = [routes.sid.VMMC34, fixes.sid.MC411, routes.star.SMT4A, routes.star.CHALI4A, routes.app.RWY34, routes.app.RWY34A, routes.app.RWY34B, routes.app.RWY34C, fixes.app.ROMEO, fixes.sid.MC420, fixes.star.MC611];
+    var show16 = [routes.sid.VMMCP1, routes.sid.VMMCP2, routes.sid.ALLEY2P, fixes.sid.MULET, routes.star.SMT5B, routes.star.CHALI5B, routes.app.RWY16, routes.app.RWY16A, fixes.star.MC513, fixes.star.INDUS];
+    var showmacau = [routes.sidterm.VMMC, routes.starterm.J103A, routes.starterm.J103B, fixes.star.RUNLI, fixes.star.MC611, fixes.star.HAZEL, fixes.sid.PAPA, fixes.star.MC601, fixes.sid.PAPA, fixes.star.HAZEL];
+    var showterm = [routes.starterm.J104, routes.starterm.J103, routes.starterm.J101, fixes.term.TAPPO, fixes.term.PICTA, , fixes.term.RAGSO, fixes.term.DASON, fixes.term.COTON, fixes.star.CHALI, 
         fixes.term.NEDLE, fixes.term.PONTI, fixes.term.BUMDI, fixes.term.ROBIN, fixes.term.ARROW, fixes.term.ISBAN, fixes.term.TUBBY];
+    
+    var showhold1 = [routes.holding.ABBEY, routes.holding.BETTY, routes.holding.CANTO];
+    var showhold2 = [routes.holding.DOVAR, routes.holding.EATON, routes.holding.FISHA, routes.holding.GAMBA, routes.holding.HOCKY, routes.starterm.W28, fixes.term.EATON, fixes.term.MEPUT];
+    var showhold3 = [routes.holding.BAKER, fixes.term.BAKER, routes.holding.COMBI, routes.holding.MYWAY];
+    var showhold4 = [routes.holding.ATIKO, routes.holding.BUMDI, routes.holding.CHALI, /*routes.holding.PAPA,*/ fixes.star.ATIKO];
+    var showhold5 = [routes.holding.TAPPO, routes.holding.GODEN, routes.holding.OTKUM, fixes.term.GODEN, fixes.term.OTKUM];
+
+    var updateViews = function() {
+        
+        var modevhhh = parseInt($('#overlay-option-vhhh').val());
+        var modevmmc = parseInt($('#overlay-option-vmmc').val());
+        var modejterm = parseInt($('#overlay-option-jterm').val());
+        var modehold = parseInt($('#overlay-option-holding').val());
+        var modeohold = parseInt($('#overlay-option-otherholds').val());
         
         show07a.forEach(function(e) { e.setVisible( modevhhh == 1 ); });
         show07b.forEach(function(e) { e.setVisible( modevhhh == 2 ); });
@@ -586,56 +714,43 @@
         show34u.forEach(function(e) { e.setVisible( modevmmc+modevhhh == 11 ); });
         fixes.sid.BREAM.setVisible( (modevhhh != 3) || (modevmmc == 8 ) );
         showmacau.forEach(function(e) { e.setVisible( modevmmc != 0 ) ; });
-        showterm.forEach(function(e) { e.setVisible( modevmmc != 0 || modeterm != 0 ) ; });
+        showterm.forEach(function(e) { e.setVisible( modevmmc != 0 || modejterm != 0 || modeohold >= 2 ); });
+        showhold1.forEach(function(e) { e.setVisible( modehold >= 1); });
+        showhold2.forEach(function(e) { e.setVisible( modehold >= 2); });
+        showhold3.forEach(function(e) { e.setVisible( modehold >= 3); });
+        showhold4.forEach(function(e) { e.setVisible( modeohold == 1 || modeohold == 3); });
+        showhold5.forEach(function(e) { e.setVisible( modeohold >= 2); });
     };
-    var container = $('<div id="showVHHH"></div>');
-    var button = $('<input type="button" value="07">').click(function() {
-        modevhhh = 1;
-        updateViews();
-    });
-    container.append(button);
-    button = $('<input type="button" value="07 Noise">').click(function() {
-        modevhhh = 2;
-        updateViews();
-    });
-    container.append(button);
-    button = $('<input type="button" value="25">').click(function() {
-        modevhhh = 3;
-        updateViews();
-    });
-    container.append(button);
-
-    $('#mainView').append(container);
-
-    var container2 = $('<div id="showVMMC"></div>');
-    var button = $('<input type="button" value="Hide">').click(function() {
-        modevmmc = 0;
-        updateViews();
-    });
-    container2.append(button);
-    button = $('<input type="button" value="16">').click(function() {
-        modevmmc = 4;
-        updateViews();
-    });
-    container2.append(button);
-    button = $('<input type="button" value="34">').click(function() {
-        modevmmc = 8;
-        updateViews();
-    });
-    container2.append(button);
-    $('#mainView').append(container2);
-    var container3 = $('<div id="showTerm"></div>');
-    var button = $('<input type="button" value="Hide">').click(function() {
-        modeterm = 0;
-        updateViews();
-    });
-    container3.append(button);
-    button = $('<input type="button" value="Show">').click(function() {
-        modeterm = 1;
-        updateViews();
-    });
-    container3.append(button);
+    $('#secondaryView').empty();
+    $('#secondaryView').append('<style>.overlay-option { margin: 4px; border: 1px solid #112244; background-color: #FFFFFF; height: 26px } .overlay-option-header { float: left; height: 100%; width: 50%; box-sizing: border-box; padding: 6px 4px 0; background-color: #285599; color: #CCE5F5; font-size: 11px; font-family: Arial } .overlay-option select { float: left; width: 50%; height: 100%; border: 0px; font-size: 11px; font-family: Arial }</style>');
+    var container;
+    var select;
+    container = $('<div class="overlay-option"><div class="overlay-option-header">Hong Kong</div></div>');
+    select = $('<select id="overlay-option-vhhh"><option value="1">07</option><option value="2">07 Noise</option><option value="3">25</option></select>');
+    container.append(select);
+    $('#secondaryView').append(container);
     
-    $('#mainView').append(container3);
+    container = $('<div class="overlay-option"><div class="overlay-option-header">Macau</div></div>');
+    select = $('<select id="overlay-option-vmmc"><option value="0">Off</option><option value="4">16</option><option value="8">34</option></select>');
+    container.append(select);
+    $('#secondaryView').append(container);
+    
+    container = $('<div class="overlay-option"><div class="overlay-option-header">J101,103,104</div></div>');
+    select = $('<select id="overlay-option-jterm"><option value="0">Off</option><option value="1">On</option></select>');
+    container.append(select);
+    $('#secondaryView').append(container);
+    
+    container = $('<div class="overlay-option"><div class="overlay-option-header">Hong Kong Holds</div></div>');
+    select = $('<select id="overlay-option-holding"><option value="0">Off</option><option value="1">ABC</option><option value="2">ABCDEFGH</option><option value="3">A-H + Alt</option></select>');
+    container.append(select);
+    $('#secondaryView').append(container);
+
+    container = $('<div class="overlay-option"><div class="overlay-option-header">Other Holds</div></div>');
+    select = $('<select id="overlay-option-otherholds"><option value="0">Off</option><option value="1">Macau ABC</option><option value="2">GOT</option><option value="3">Macau ABC + GOT</option></select>');
+    container.append(select);
+    $('#secondaryView').append(container);
+
+    $('.overlay-option select').change(updateViews);
+    
     updateViews();
 })();

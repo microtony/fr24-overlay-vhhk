@@ -714,7 +714,7 @@
         show34u.forEach(function(e) { e.setVisible( modevmmc+modevhhh == 11 ); });
         fixes.sid.BREAM.setVisible( (modevhhh != 3) || (modevmmc == 8 ) );
         showmacau.forEach(function(e) { e.setVisible( modevmmc != 0 ) ; });
-        showterm.forEach(function(e) { e.setVisible( modevmmc != 0 || modejterm != 0 || modeohold >= 2 ); });
+        showterm.forEach(function(e) { e.setVisible( modevmmc != 0 || modejterm != 0 || modeohold >= 0 ); });
         showhold1.forEach(function(e) { e.setVisible( modehold >= 1); });
         showhold2.forEach(function(e) { e.setVisible( modehold >= 2); });
         showhold3.forEach(function(e) { e.setVisible( modehold >= 3); });
@@ -722,31 +722,32 @@
         showhold5.forEach(function(e) { e.setVisible( modeohold >= 2); });
     };
     $('#secondaryView').empty();
-    $('#secondaryView').append('<style>.overlay-option { margin: 4px; border: 1px solid #112244; background-color: #FFFFFF; height: 24px } .overlay-option-header { float: left; height: 100%; width: 50%; box-sizing: border-box; -moz-box-sizing: border-box; padding: 5px 4px 0; background-color: #285599; color: #CCE5F5; font-size: 11px; font-family: Arial } .overlay-option select { float: left; width: 50%; height: 100%; border: 0px; font-size: 11px; font-family: Arial }</style>');
+    $('#secondaryView').append('<style>.overlay-option { margin: 4px; border: 1px solid #112244; background-color: #FFFFFF; height: 24px } .overlay-option-header { float: left; height: 100%; width: 50%; box-sizing: border-box; -moz-box-sizing: border-box; padding: 5px 4px 0; background-color: #285599; color: #CCE5F5; font-size: 11px; font-family: Arial } .overlay-option select { float: left; width: 50%; height: 100%; border: 0px; font-size: 11px; font-family: Arial; box-sizing: border-box; -moz-box-sizing: border-box; padding: 3px 2px }</style>');
     var container;
     var select;
     container = $('<div class="overlay-option"><div class="overlay-option-header">Hong Kong</div></div>');
-    select = $('<select id="overlay-option-vhhh"><option value="1">07</option><option value="2">07 Noise</option><option value="3">25</option></select>');
+    select = $('<select id="overlay-option-vhhh"><option value="1">07</option><option value="2">07 Night</option><option value="3">25</option></select>');
     container.append(select);
     $('#secondaryView').append(container);
-    
-    container = $('<div class="overlay-option"><div class="overlay-option-header">Macau</div></div>');
-    select = $('<select id="overlay-option-vmmc"><option value="0">Off</option><option value="4">16</option><option value="8">34</option></select>');
-    container.append(select);
-    $('#secondaryView').append(container);
-    
-    container = $('<div class="overlay-option"><div class="overlay-option-header">J101,103,104</div></div>');
-    select = $('<select id="overlay-option-jterm"><option value="0">Off</option><option value="1">On</option></select>');
-    container.append(select);
-    $('#secondaryView').append(container);
-    
+        
     container = $('<div class="overlay-option"><div class="overlay-option-header">Hong Kong Holds</div></div>');
     select = $('<select id="overlay-option-holding"><option value="0">Off</option><option value="1">ABC</option><option value="2">ABCDEFGH</option><option value="3">A-H + Alt</option></select>');
     container.append(select);
     $('#secondaryView').append(container);
 
+
+    container = $('<div class="overlay-option"><div class="overlay-option-header">Macau</div></div>');
+    select = $('<select id="overlay-option-vmmc"><option value="0">Off</option><option value="4">16</option><option value="8">34</option></select>');
+    container.append(select);
+    $('#secondaryView').append(container);
+    
     container = $('<div class="overlay-option"><div class="overlay-option-header">Other Holds</div></div>');
     select = $('<select id="overlay-option-otherholds"><option value="0">Off</option><option value="1">Macau ABC</option><option value="2">GOT</option><option value="3">Macau ABC + GOT</option></select>');
+    container.append(select);
+    $('#secondaryView').append(container);
+
+    container = $('<div class="overlay-option"><div class="overlay-option-header">J101,103,104</div></div>');
+    select = $('<select id="overlay-option-jterm"><option value="0">Auto</option><option value="1">On</option></select>');
     container.append(select);
     $('#secondaryView').append(container);
 

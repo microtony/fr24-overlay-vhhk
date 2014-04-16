@@ -714,7 +714,7 @@
         show34u.forEach(function(e) { e.setVisible( modevmmc+modevhhh == 11 ); });
         fixes.sid.BREAM.setVisible( (modevhhh != 3) || (modevmmc == 8 ) );
         showmacau.forEach(function(e) { e.setVisible( modevmmc != 0 ) ; });
-        showterm.forEach(function(e) { e.setVisible( modevmmc != 0 || modejterm != 0 || modeohold >= 0 ); });
+        showterm.forEach(function(e) { e.setVisible( modevmmc != 0 || modejterm != 0 || modeohold >= 1 ); });
         showhold1.forEach(function(e) { e.setVisible( modehold >= 1); });
         showhold2.forEach(function(e) { e.setVisible( modehold >= 2); });
         showhold3.forEach(function(e) { e.setVisible( modehold >= 3); });

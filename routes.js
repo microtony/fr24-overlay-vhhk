@@ -675,7 +675,8 @@
     fixes.term.OTKUM = fix(22.0595,114.082194);
     routes.holding.OTKUM = route('starterm3', [pos(22.059491,114.082110),pos(22.068815,114.074619),pos(22.075168,114.064063),pos(22.077791,114.051798),pos(22.076369,114.039305),pos(22.071073,114.028090),pos(22.062542,114.019506),pos(22.051805,114.014589),pos(22.040157,114.013931),pos(21.952511,114.042821),pos(21.943195,114.050389),pos(21.936842,114.060935),pos(21.934218,114.073187),pos(21.935639,114.085668),pos(21.940934,114.096872),pos(21.949464,114.105449),pos(21.960201,114.110363),pos(21.971850,114.111022),pos(22.059491,114.082110)]);
     
-    var show07a = [routes.sid.RWY07R2, routes.sid.RWY07L2, routes.sid.RWY07E, routes.sid.OCEAN2A, routes.sid.LAKES2A, routes.sid.BEKOL3A];
+    var show07a = [routes.sid.RWY07R2, routes.sid.RWY07L2, routes.sid.RWY07E, routes.sid.BEKOL3A];
+    var show07d = [routes.sid.OCEAN2A, routes.sid.LAKES2A];
     var show07b = [routes.sid.ATENA2A, routes.sid.RASSE3A, routes.sid.LOGAN3A, fixes.sid.COLEY];
     var show07c = [routes.sid.RWY07R1, routes.sid.RWY07L1, routes.app.RWY07L, routes.app.RWY07R, routes.star.ABBEY3A, routes.star.BETTY2A, routes.star.AB2A, routes.star.SIERA6A, routes.star.SIERA6C, routes.star.C2AS6AC, fixes.app.TONIC, fixes.app.STELA, fixes.app.LIMES, fixes.star.GUAVA, fixes.star.SOKOE, fixes.star.SILVA,
         routes.sid.RWY07LS, routes.sid.RWY07RS, routes.sid.PECAN1A, fixes.sid.PORPA, fixes.sid.ROVER, fixes.sid.ATENA, fixes.sid.RAMEN];
@@ -706,6 +707,7 @@
         show07a.forEach(function(e) { e.setVisible( modevhhh == 1 ); });
         show07b.forEach(function(e) { e.setVisible( modevhhh == 2 ); });
         show07c.forEach(function(e) { e.setVisible( modevhhh != 3 ); });
+        show07d.forEach(function(e) { e.setVisible( modevhhh == 1 || (modevmmc == 8 && modevhhh == 2)); });
         show25.forEach(function(e) { e.setVisible( modevhhh == 3); });
         
         show16.forEach(function(e) { e.setVisible( modevmmc == 4 ); });

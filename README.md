@@ -11,21 +11,7 @@ Information may contain errors, and may not be updated. Routes have been simplif
 Installation 使用方法
 -----------------
 
-1. Drag <a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://raw.githubusercontent.com/microtony/fr24-overlay-vhhk/master/routes.js';document.body.appendChild(document.createElement('script')).src='https://raw.githubusercontent.com/microtony/fr24-overlay-vhhk/master/fir.js';})();">this link</a> into your browser's bookmark bar. (or right click then  "Bookmark this link")
-
-   將 <a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://raw.githubusercontent.com/microtony/fr24-overlay-vhhk/master/routes.js';document.body.appendChild(document.createElement('script')).src='https://raw.githubusercontent.com/microtony/fr24-overlay-vhhk/master/fir.js';})();">此連結</a> 拉到你的瀏覽器的書籤工具列上。 (或按右鍵選擇加到書籤)
-
-2. Open http://www.fightradar24.com
-
-   打開 http://www.fightradar24.com
-
-3. Click on the bookmark
-
-   按一下該書籤
-
-4. Set what to show on the left panel.
-
-   在左面界面設定顯示模式。
+https://raw.githubusercontent.com/microtony/fr24-overlay-vhhk/master/install.htm
 
 Features
 -----------------

@@ -764,8 +764,29 @@
     
     google.maps.event.addListener(map, 'zoom_changed', updateCenterline);
 
+    var swBound = new google.maps.LatLng(20.00107, 111.68321);
+    var neBound = new google.maps.LatLng(24.60560, 116.66013);
+    var bounds = new google.maps.LatLngBounds(swBound, neBound);
+    var overlay = false;
+    var wxoverlay = function() {
+      if (overlay) {
+        overlay.setMap(null);
+      }
+      var random = (new Date()).getTime();
+      overlay = new google.maps.GroundOverlay('http://www.microtony.com/lastradar.php?'+random, bounds);
+      overlay.setOpacity(0.3);
+      overlay.setMap(map);
+      $('#overlay-weather-show').html('Update');
+    }
+    var wxoverlayhide = function() {
+      if (overlay) {
+        overlay.setMap(null);
+        overlay = false;
+      }
+    }
+
     $('#secondaryView').empty();
-    $('#secondaryView').append('<style>.overlay-option { margin: 4px; border: 1px solid #112244; background-color: #FFFFFF; height: 24px } .overlay-option-header { float: left; height: 100%; width: 50%; box-sizing: border-box; -moz-box-sizing: border-box; padding: 5px 4px 0; background-color: #285599; color: #CCE5F5; font-size: 11px; font-family: Arial } .overlay-option select { float: left; width: 50%; height: 100%; border: 0px; font-size: 11px; font-family: Arial; box-sizing: border-box; -moz-box-sizing: border-box; padding: 3px 2px }</style>');
+    $('#secondaryView').append('<style>.overlay-option { margin: 4px; border: 1px solid #112244; background-color: #FFFFFF; height: 24px } .overlay-option-header { float: left; height: 100%; width: 50%; box-sizing: border-box; -moz-box-sizing: border-box; padding: 5px 4px 0; background-color: #285599; color: #CCE5F5; font-size: 11px; font-family: Arial } .overlay-option select { float: left; width: 50%; height: 100%; border: 0px; font-size: 11px; font-family: Arial; box-sizing: border-box; -moz-box-sizing: border-box; padding: 3px 2px } .overlay-option button { height: 100%; border: 0; background-color: #FFF; color: #333; font-size: 11px } #overlay-weather-show { width: 55px ; border-right: 1px solid #678; } #overlay-weather-hide { width: 40px } </style>');
     var container;
     var select;
     container = $('<div class="overlay-option"><div class="overlay-option-header">Hong Kong</div></div>');
@@ -797,4 +818,13 @@
     $('.overlay-option select').change(updateViews);
     
     updateViews();
+    
+    container = $('<div class="overlay-option" style="overflow: hidden"><div class="overlay-option-header">Weather Radar</div></div>');
+    select = $('<button id="overlay-weather-show">Show</button><button id="overlay-weather-hide">Hide</button>');
+    container.append(select);
+    $('#secondaryView').append(container);
+    
+    $('#overlay-weather-show').click(wxoverlay);
+    $('#overlay-weather-hide').click(wxoverlayhide);
+
 })();

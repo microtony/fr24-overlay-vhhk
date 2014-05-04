@@ -2,15 +2,19 @@
     var colors = {
         app : { strokeColor: '#FFFFFF', strokeOpacity: 0.5, strokeWeight: 1 },
         app2 : { strokeOpacity: 0, icons : [{ icon: { path: 'M 0,-4 0,4', strokeColor : '#FFFFFF', strokeOpacity: 0.5, scale: 1 }, offset: '0', repeat: '14px' }] },
+        center07 : { strokeOpacity: 0, icons : [{ icon: { path: 'M 0,-0.1 0,0.1', strokeColor : '#FFFF00', strokeOpacity: 0.6, strokeWeight: 3, }, offset: '0', repeat: '8.3333%' }] },
+        center25 : { strokeOpacity: 0, icons : [{ icon: { path: 'M 0,-0.1 0,0.1', strokeColor : '#FFFF00', strokeOpacity: 0.6, strokeWeight: 3, }, offset: '0', repeat: '4%' }] },
+        center07b : { strokeOpacity: 0, icons : [{ icon: { path: 'M 0,-0.1 0,0.1', strokeColor : '#FFFF00', strokeOpacity: 0.8, strokeWeight: 4, }, offset: '0', repeat: '50%' }] },
+        center25b : { strokeOpacity: 0, icons : [{ icon: { path: 'M 0,-0.1 0,0.1', strokeColor : '#FFFF00', strokeOpacity: 0.8, strokeWeight: 4, }, offset: '0', repeat: '20%' }] },
         star: { strokeOpacity: 0, icons : [{ icon: { path: 'M 0,-2, 0,2', strokeColor : '#66FF66', strokeOpacity: 0.6, scale: 1 }, offset: '0', repeat: '7px' }] },
         star2: { strokeOpacity: 0, icons : [{ icon: { path: 'M 0,-5 0,5', strokeColor : '#66CCFF', strokeOpacity: 0.5, scale: 1 }, offset: '0', repeat: '16px' }] },
         starterm : { strokeOpacity: 0, icons : [{ icon: { path: 'M 0,-2, 0,2', strokeColor : '#66FF66', strokeOpacity: 0.5, scale: 1 }, offset: '0', repeat: '7px' }] },
         starterm2 : { strokeOpacity: 0, icons : [{ icon: { path: 'M 0,-2, 0,2', strokeColor : '#66FF66', strokeOpacity: 0.3, scale: 1 }, offset: '0', repeat: '9px' }] },
         starterm3 : { strokeOpacity: 0, icons : [{ icon: { path: 'M 0,-5 0,5', strokeColor : '#66CCFF', strokeOpacity: 0.6, scale: 1 }, offset: '0', repeat: '16px' }] },
-        sid : { strokeOpacity: 0, icons : [{ icon: { path: 'M 0,-2 0,2', strokeColor : '#FFEE66', strokeOpacity: 0.6, scale: 1 }, offset: '0', repeat: '7px' }] },
-        sid2 : { strokeOpacity: 0, icons : [{ icon: { path: 'M 0,-2 0,2', strokeColor : '#FFEE66', strokeOpacity: 0.4, scale: 1 }, offset: '0', repeat: '7px' }] },
-        sidterm2 : { strokeColor: '#FFEE66', strokeOpacity: 0.2, strokeWeight: 1 },
-        sidterm : { strokeColor: '#FFEE66', strokeOpacity: 0.3, strokeWeight: 1 },
+        sid : { strokeOpacity: 0, icons : [{ icon: { path: 'M 0,-2 0,2', strokeColor : '#FFDD66', strokeOpacity: 0.6, scale: 1 }, offset: '0', repeat: '7px' }] },
+        sid2 : { strokeOpacity: 0, icons : [{ icon: { path: 'M 0,-2 0,2', strokeColor : '#FFDD66', strokeOpacity: 0.4, scale: 1 }, offset: '0', repeat: '7px' }] },
+        sidterm2 : { strokeColor: '#FFDD66', strokeOpacity: 0.2, strokeWeight: 1 },
+        sidterm : { strokeColor: '#FFDD66', strokeOpacity: 0.3, strokeWeight: 1 },
         airway : { strokeColor: '#FFFFFF', strokeOpacity: 0.6, strokeWeight: 1 },
         transit : { strokeColor: '#FFFFFF', strokeOpacity: 0.2, strokeWeight: 1 },
     };
@@ -34,12 +38,25 @@
 
     fixes.app.LIMES = fix(22.107111, 113.775722, 'LIMES');
     fixes.app.TONIC = fix(22.213300, 113.722736, 'TONIC');
-    fixes.app.CEDAR = fix(22.270153, 113.771700, '');
+    fixes.app.IF07L = fix(22.265700, 113.757917, '');
     fixes.rwy.RW07L = fix(22.310917, 113.897967, '');
     fixes.app.STELA = fix(22.198136, 113.730308, 'STELA');
-    fixes.app.IF07R = fix(22.258524, 113.781169, '');
+    fixes.app.IF07R = fix(22.254222, 113.767961, '');
     fixes.rwy.RW07R = fix(22.296675, 113.899444, '');
 
+    // touchdown points
+    fixes.rwy.RW07LT=fix(22.311833, 113.900811, '');
+    fixes.rwy.RW07RT=fix(22.297589, 113.902283, '');
+    fixes.rwy.RW07LTD10=fix(22.257000, 113.731036, '');
+    fixes.rwy.RW07RTD10=fix(22.242756, 113.732525, '');
+    fixes.rwy.RW07LTD12=fix(22.246011, 113.697097, '');
+    fixes.rwy.RW07RTD12=fix(22.231767, 113.698589, '');
+    
+    fixes.rwy.RW25RT=fix(22.320206, 113.926794, '');
+    fixes.rwy.RW25LT=fix(22.306514, 113.929981, '');
+    fixes.rwy.RW25RTD25=fix(22.456511, 114.351842, '');
+    fixes.rwy.RW25LTD25=fix(22.442819, 114.354986, '');
+    
     fixes.app.TD    = fix(22.247894, 114.293139, 'TD');
     fixes.app.RIVER = fix(22.402097, 114.181731, 'RIVER');
     fixes.rwy.RW25R = fix(22.321122, 113.929639, '');
@@ -472,13 +489,23 @@
         options.map = map;
         return new google.maps.Polyline(options);
     };
-    var routes = { app: {}, star: {}, starterm: {}, sid: {}, sidterm: {}, airway: {}, transit: {}, holding: {} };
+    var routes = { app: {}, star: {}, starterm: {}, sid: {}, sidterm: {}, airway: {}, transit: {}, holding: {}, center: {} };
 
-    routes.app.RWY07L = route('app', [fixes.app.LIMES, fixes.app.TONIC, fixes.app.CEDAR, fixes.rwy.RW07L]);
+    routes.app.RWY07L = route('app', [fixes.app.LIMES, fixes.app.TONIC, fixes.app.IF07L, fixes.rwy.RW07L]);
     routes.app.RWY07R = route('app', [fixes.app.STELA, fixes.app.IF07R, fixes.rwy.RW07R]);
     routes.app.RWY25R = route('app', [fixes.app.TD, fixes.app.TDD08, fixes.app.RIVER, fixes.rwy.RW25R]);
     routes.app.RWY25L = route('app', [fixes.app.TDD07, fixes.app.LOTUS, fixes.rwy.RW25L]);
 
+    routes.center.RWY07L = route('center07', [fixes.rwy.RW07LTD12, fixes.rwy.RW07LT]);
+    routes.center.RWY07Lb = route('center07b', [fixes.rwy.RW07LTD10, fixes.rwy.RW07LT]);
+    routes.center.RWY07R = route('center07', [fixes.rwy.RW07RTD12, fixes.rwy.RW07RT]);
+    routes.center.RWY07Rb = route('center07b', [fixes.rwy.RW07RTD10, fixes.rwy.RW07RT]);
+    
+    routes.center.RWY25R = route('center25', [fixes.rwy.RW25RTD25, fixes.rwy.RW25RT]);
+    routes.center.RWY25Rb = route('center25b', [fixes.rwy.RW25RTD25, fixes.rwy.RW25RT]);
+    routes.center.RWY25L = route('center25', [fixes.rwy.RW25LTD25, fixes.rwy.RW25LT]);
+    routes.center.RWY25Lb = route('center25b', [fixes.rwy.RW25LTD25, fixes.rwy.RW25LT]);
+    
     routes.star.ABBEY3A = route('star', [fixes.star.ABBEY, fixes.star.MUSEL, fixes.star.TAMAR, fixes.app.TD, fixes.star.GUAVA]);
     routes.star.BETTY2A = route('star', [fixes.star.BETTY, fixes.star.MANGO, fixes.star.GUAVA]);
     routes.star.AB2A    = route('star', [fixes.star.GUAVA, fixes.star.SOKOE, fixes.app.LIMES]);
@@ -722,7 +749,21 @@
         showhold3.forEach(function(e) { e.setVisible( modehold >= 3); });
         showhold4.forEach(function(e) { e.setVisible( modeohold == 1 || modeohold == 3); });
         showhold5.forEach(function(e) { e.setVisible( modeohold >= 2); });
+        updateCenterline();
     };
+    
+    var show07centerlines = [routes.center.RWY07L, routes.center.RWY07Lb, routes.center.RWY07R, routes.center.RWY07Rb];
+    var show25centerlines = [routes.center.RWY25L, routes.center.RWY25Lb, routes.center.RWY25R, routes.center.RWY25Rb];
+    
+    var updateCenterline = function() {
+        var modevhhh = parseInt($('#overlay-option-vhhh').val());
+        var zoom = map.getZoom();
+        show07centerlines.forEach(function(e) { e.setVisible( modevhhh != 3 && zoom >= 10 ); });
+        show25centerlines.forEach(function(e) { e.setVisible( modevhhh == 3 && zoom >= 10 ); });
+    };
+    
+    google.maps.event.addListener(map, 'zoom_changed', updateCenterline);
+
     $('#secondaryView').empty();
     $('#secondaryView').append('<style>.overlay-option { margin: 4px; border: 1px solid #112244; background-color: #FFFFFF; height: 24px } .overlay-option-header { float: left; height: 100%; width: 50%; box-sizing: border-box; -moz-box-sizing: border-box; padding: 5px 4px 0; background-color: #285599; color: #CCE5F5; font-size: 11px; font-family: Arial } .overlay-option select { float: left; width: 50%; height: 100%; border: 0px; font-size: 11px; font-family: Arial; box-sizing: border-box; -moz-box-sizing: border-box; padding: 3px 2px }</style>');
     var container;

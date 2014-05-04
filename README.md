@@ -11,7 +11,7 @@ Information may contain errors, and may not be updated. Routes have been simplif
 Installation 使用方法
 -----------------
 
-https://raw.githubusercontent.com/microtony/fr24-overlay-vhhk/master/install.htm
+http://bit.ly/1hRK7G0
 
 Features
 -----------------

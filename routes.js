@@ -785,8 +785,8 @@
       }
     }
 
-    $('#secondaryView').empty();
-    $('#secondaryView').append('<style>.overlay-option { margin: 4px; border: 1px solid #112244; background-color: #FFFFFF; height: 24px } .overlay-option-header { float: left; height: 100%; width: 50%; box-sizing: border-box; -moz-box-sizing: border-box; padding: 5px 4px 0; background-color: #285599; color: #CCE5F5; font-size: 11px; font-family: Arial } .overlay-option select { float: left; width: 50%; height: 100%; border: 0px; font-size: 11px; font-family: Arial; box-sizing: border-box; -moz-box-sizing: border-box; padding: 3px 2px } .overlay-option button { height: 100%; border: 0; background-color: #FFF; color: #333; font-size: 11px } #overlay-weather-show { width: 55px ; border-right: 1px solid #678; } #overlay-weather-hide { width: 40px } </style>');
+    $('#secondaryView').empty().css('overflow', 'auto');
+    $('#secondaryView').append('<style>.overlay-option { margin: 4px; border: 1px solid #112244; background-color: #FFFFFF; height: 24px } .overlay-option-header { float: left; height: 100%; width: 50%; box-sizing: border-box; -moz-box-sizing: border-box; padding: 5px 4px 0; background-color: #285599; color: #CCE5F5; font-size: 11px; font-family: Arial } .overlay-option select { float: left; width: 50%; height: 100%; border: 0px; font-size: 11px; font-family: Arial; box-sizing: border-box; -moz-box-sizing: border-box; padding: 3px 2px } .overlay-option button { height: 100%; border: 0; background-color: #FFF; color: #333; font-size: 11px } #overlay-weather-show { width: 29% ; border-right: 1px solid #678; } #overlay-weather-hide { width: 20% } </style>');
     var container;
     var select;
     container = $('<div class="overlay-option"><div class="overlay-option-header">Hong Kong</div></div>');
@@ -794,7 +794,7 @@
     container.append(select);
     $('#secondaryView').append(container);
         
-    container = $('<div class="overlay-option"><div class="overlay-option-header">Hong Kong Holds</div></div>');
+    container = $('<div class="overlay-option"><div class="overlay-option-header">Holds</div></div>');
     select = $('<select id="overlay-option-holding"><option value="0">Off</option><option value="1">ABC</option><option value="2">ABCDEFGH</option><option value="3">A-H + Alt</option></select>');
     container.append(select);
     $('#secondaryView').append(container);
@@ -827,4 +827,8 @@
     $('#overlay-weather-show').click(wxoverlay);
     $('#overlay-weather-hide').click(wxoverlayhide);
 
+    var js = document.createElement("script");
+    js.src = "https://raw.githubusercontent.com/microtony/fr24-overlay-vhhk/master/atc.js";
+    document.body.appendChild(js);
+    
 })();

@@ -1,6 +1,6 @@
 (function() {
         
-    var styles = '#atc-wrapper { padding: 10px 130px 12px 220px; background-color: rgba(0, 0, 0, 0.4); } #atc-wrapper .atc { display: inline-block; width: 200px; cursor: pointer; border-width: 1px; border-style: solid; border-color: #555; background-color: #777; color: #EEE; padding: 3px 5px; margin: 4px 4px 0 0; font-size: 13px; }';
+    var styles = '#atc-wrapper { padding: 10px 130px 20px 240px; background-color: rgba(0, 0, 0, 0.4); } #atc-wrapper .atc { display: inline-block; width: 200px; cursor: pointer; border-width: 1px; border-style: solid; border-color: #555; background-color: #777; color: #EEE; padding: 3px 5px; margin: 4px 4px 0 0; font-size: 13px; }';
     styles += '#atc-wrapper .atc-play { border-color: #112244; background-color: #285599; color: #99E5F5; } #atc-wrapper .atc-play.atc-rx { background-color: #5888CC; color: #AAFFFF; } #atc-wrapper .atc-play.atc-rx.atc-rx2 { background-color: #7899DD; color: #CCFFFF; }';
     styles += '#atc-wrapper .atc-icon { float: left; width: 14px; height: 14px; margin-right: 6px; background: url("http://www.microtony.com/playstop.png"); overflow: hidden; } #atc-wrapper .atc-play .atc-icon { background-position: -15px 0 }';
     styles += '#atc-toggle { cursor: pointer; font-size: 14px; text-decoration: underline; }';

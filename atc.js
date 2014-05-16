@@ -7,7 +7,7 @@
     styles += '#sm2-container { height: 10px; width: 10px; overflow: hidden;  display: inline-block; }';
     $('body').append('<style>'+styles+'</style>');
 
-    var controlDiv = $('<div id="atc-wrapper"><div style="display: inline-block; width: 216px; color: #FFF; font-size: 20px">ATC <span style="font-size: 15px">(BETA)</span><div id="sm2-container"></div></div></div>');
+    var controlDiv = $('<div id="atc-wrapper"><div style="display: inline-block; width: 216px; color: #FFF; font-size: 20px">ATC <span style="font-size: 15px">(BETA) <a href="https://github.com/microtony/fr24-overlay-vhhk#atc-faq" target="_blank">FAQ</a></span><div id="sm2-container"></div></div></div>');
     controlDiv.index = 10;
     map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(controlDiv[0]);
     
@@ -31,9 +31,9 @@
                 } else {
                     getButton(this.id).removeClass('atc-rx2');
                 }
-                getButton(this.id).addClass('airband-rx');
+                getButton(this.id).addClass('atc-rx');
             } else {
-                getButton(this.id).removeClass('airband-rx');
+                getButton(this.id).removeClass('atc-rx');
             }
         }
     };

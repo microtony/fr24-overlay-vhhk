@@ -7,7 +7,7 @@
     styles += '#sm2-container { height: 10px; width: 10px; overflow: hidden;  display: inline-block; }';
     $('body').append('<style>'+styles+'</style>');
 
-    var controlDiv = $('<div id="atc-wrapper"><div style="display: inline-block; width: 216px; color: #FFF; font-size: 20px">ATC <span style="font-size: 15px">(BETA) <a href="https://github.com/microtony/fr24-overlay-vhhk#atc-faq" target="_blank">FAQ</a></span><div id="sm2-container"></div></div></div>');
+    var controlDiv = $('<div id="atc-wrapper"><div style="display: inline-block; width: 216px; color: #FFF; font-size: 20px">ATC <span style="font-size: 15px">(BETA) <a href="https://github.com/microtony/fr24-overlay-vhhk#atc-faq" target="_blank" style="color: #9DE">FAQ</a></span><div id="sm2-container"></div></div></div>');
     controlDiv.index = 10;
     map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(controlDiv[0]);
     

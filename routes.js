@@ -827,8 +827,8 @@
     $('#overlay-weather-show').click(wxoverlay);
     $('#overlay-weather-hide').click(wxoverlayhide);
 
-    var js = document.createElement("script");
-    js.src = "https://raw.githubusercontent.com/microtony/fr24-overlay-vhhk/master/atc.js";
-    document.body.appendChild(js);
+    //var js = document.createElement("script");
+    //js.src = "https://raw.githubusercontent.com/microtony/fr24-overlay-vhhk/master/atc.js";
+    //document.body.appendChild(js);
     
 })();

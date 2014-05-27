@@ -1,3 +1,5 @@
+var vhhhauto = 1;
+var vhhhautocb = function() {};
 (function() {
     var colors = {
         app : { strokeColor: '#FFFFFF', strokeOpacity: 0.5, strokeWeight: 1 },
@@ -722,10 +724,16 @@
     var showhold3 = [routes.holding.BAKER, fixes.term.BAKER, routes.holding.COMBI, routes.holding.MYWAY];
     var showhold4 = [routes.holding.ATIKO, routes.holding.BUMDI, routes.holding.CHALI, /*routes.holding.PAPA,*/ fixes.star.ATIKO];
     var showhold5 = [routes.holding.TAPPO, routes.holding.GODEN, routes.holding.OTKUM, fixes.term.GODEN, fixes.term.OTKUM];
-
+    
     var updateViews = function() {
         
-        var modevhhh = parseInt($('#overlay-option-vhhh').val());
+        var modevhhh2 = parseInt($('#overlay-option-vhhh').val());
+        var modevhhh;
+        if (modevhhh2 == 0) {
+            modevhhh = vhhhauto;
+        } else {
+            modevhhh = modevhhh2;
+        }
         var modevmmc = parseInt($('#overlay-option-vmmc').val());
         var modejterm = parseInt($('#overlay-option-jterm').val());
         var modehold = parseInt($('#overlay-option-holding').val());
@@ -756,7 +764,13 @@
     var show25centerlines = [routes.center.RWY25L, routes.center.RWY25Lb, routes.center.RWY25R, routes.center.RWY25Rb];
     
     var updateCenterline = function() {
-        var modevhhh = parseInt($('#overlay-option-vhhh').val());
+        var modevhhh2 = parseInt($('#overlay-option-vhhh').val());
+        var modevhhh;
+        if (modevhhh2 == 0) {
+            modevhhh = vhhhauto;
+        } else {
+            modevhhh = modevhhh2;
+        }
         var zoom = map.getZoom();
         show07centerlines.forEach(function(e) { e.setVisible( modevhhh != 3 && zoom >= 10 ); });
         show25centerlines.forEach(function(e) { e.setVisible( modevhhh == 3 && zoom >= 10 ); });
@@ -764,6 +778,11 @@
     
     google.maps.event.addListener(map, 'zoom_changed', updateCenterline);
 
+    vhhhautocb = function() {
+        $('#overlay-option-vhhhauto').html('Auto ('+(vhhhauto==1?"07":vhhhauto==2?"07 (Night)":"25")+')');
+        updateViews();
+    };
+    
     var swBound = new google.maps.LatLng(20.00107, 111.68321);
     var neBound = new google.maps.LatLng(24.60560, 116.66013);
     var bounds = new google.maps.LatLngBounds(swBound, neBound);
@@ -786,11 +805,11 @@
     }
 
     $('#secondaryView').empty().css('overflow', 'auto');
-    $('#secondaryView').append('<style>.overlay-option { margin: 4px; border: 1px solid #112244; background-color: #FFFFFF; height: 24px } .overlay-option-header { float: left; height: 100%; width: 50%; box-sizing: border-box; -moz-box-sizing: border-box; padding: 5px 4px 0; background-color: #285599; color: #CCE5F5; font-size: 11px; font-family: Arial } .overlay-option select { float: left; width: 50%; height: 100%; border: 0px; font-size: 11px; font-family: Arial; box-sizing: border-box; -moz-box-sizing: border-box; padding: 3px 2px } .overlay-option button { height: 100%; border: 0; background-color: #FFF; color: #333; font-size: 11px } #overlay-weather-show { width: 29% ; border-right: 1px solid #678; } #overlay-weather-hide { width: 20% } </style>');
+    $('#secondaryView').append('<style>.overlay-option { margin: 4px; border: 1px solid #112244; background-color: #FFFFFF; height: 24px } .overlay-option-header { float: left; height: 100%; width: 50%; box-sizing: border-box; -moz-box-sizing: border-box; padding: 5px 4px 0; background-color: #285599; color: #CCE5F5; font-size: 11px; font-family: Arial } .overlay-option select { float: left; width: 50%; height: 100%; border: 0px; font-size: 11px; font-family: Arial; box-sizing: border-box; -moz-box-sizing: border-box; padding: 4px 2px } .overlay-option button { height: 100%; border: 0; background-color: #FFF; color: #333; font-size: 11px } #overlay-weather-show { width: 29% ; border-right: 1px solid #678; } #overlay-weather-hide { width: 20% } </style>');
     var container;
     var select;
     container = $('<div class="overlay-option"><div class="overlay-option-header">Hong Kong</div></div>');
-    select = $('<select id="overlay-option-vhhh"><option value="1">07</option><option value="2">07 Night</option><option value="3">25</option></select>');
+    select = $('<select id="overlay-option-vhhh"><option value="0" id="overlay-option-vhhhauto">Auto (07)</option><option value="1">07</option><option value="2">07 Night</option><option value="3">25</option></select>');
     container.append(select);
     $('#secondaryView').append(container);
         
@@ -826,9 +845,5 @@
     
     $('#overlay-weather-show').click(wxoverlay);
     $('#overlay-weather-hide').click(wxoverlayhide);
-
-    //var js = document.createElement("script");
-    //js.src = "https://raw.githubusercontent.com/microtony/fr24-overlay-vhhk/master/atc.js";
-    //document.body.appendChild(js);
     
 })();

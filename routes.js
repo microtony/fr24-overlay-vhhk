@@ -649,7 +649,6 @@ var vhhhautocb = function() {};
     routes.airway.A206 = route('airway', [fixes.airway.ASSAD, fixes.airway.HATIN]);
     routes.airway.G221 = route('airway', [fixes.airway.BIGRO, fixes.airway.GIVIV, fixes.airway.SAMAS, fixes.airway.NYB, fixes.airway.GIVIL, fixes.airway.WL, fixes.airway.SYX, fixes.airway.OMGEN, fixes.airway.SAGSU, fixes.airway.BUNTA, fixes.airway.PCA]);    
     routes.airway.R339 = route('airway', [fixes.term.SIKOU, fixes.airway.GIVIV, fixes.airway.LH, fixes.airway.BHY, fixes.airway.ALEKI, fixes.airway.NIKUK, fixes.airway.NNG]);
-    routes.airway.W70 = route('airway', [fixes.airway.NYB, fixes.airway.LIDLU, fixes.airway.PEGDU, fixes.airway.BHY]);
     
     // guangzhou FIR
     routes.airway.A461 = route('airway', [fixes.term.BEKOL, fixes.airway.IDUMA, fixes.airway.SHL, fixes.airway.YIN, fixes.airway.BUBDA, fixes.airway.LIG]);

@@ -1,8 +1,5 @@
 (function() {
     var js = document.createElement("script");
-    js.src = "http://www.microtony.com/fr24/soundmanager2-nodebug-jsmin.js";
-    document.body.appendChild(js);
-    js = document.createElement("script");
     js.src = "http://www.microtony.com/fr24/routes.js";
     document.body.appendChild(js);
     js = document.createElement("script");

@@ -8,5 +8,5 @@
         });
     };
     setInterval(updater, 150000);
-    setTimeout(updater, 1000);
+    setTimeout(updater, 5000);
 })();

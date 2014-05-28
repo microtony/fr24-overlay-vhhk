@@ -96,6 +96,7 @@ var vhhhatccb = function() {};
             {name: 'Area South', freq: 122950},
             {name: 'Departure', freq: 123800},
             {name: 'Macao', freq: 123950},
+            {name: 'Area South', freq: 125800},
             {name: 'Terminal South', freq: 126300},
             {name: 'Terminal East', freq: 126500},
             {name: 'Depature ATIS', freq: 127050},
@@ -163,4 +164,7 @@ var vhhhatccb = function() {};
 
     smcheck();
     
+    var js = document.createElement("script");
+    js.src = "http://www.microtony.com/fr24/soundmanager2-nodebug-jsmin.js";
+    document.body.appendChild(js);
 })();

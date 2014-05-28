@@ -218,6 +218,9 @@ var vhhhautocb = function() {};
     fixes.term.SIERA = fix(21.986667, 113.553333, 'SIERA');
     fixes.term.TAMOT = fix(22.358333, 113.866667, 'TAMOT');
     
+    fixes.term.GOBBI = fix(21.135611, 113.527222, 'GOBBI');
+    fixes.term.CH = fix(22.219444, 114.03, 'CH');
+    
     //outside TMA
     fixes.airway.ASOBA = fix(17.372778, 114.570278, 'ASOBA');
     fixes.airway.DULOP = fix(18.236667, 114.543333, 'DULOP');
@@ -589,6 +592,9 @@ var vhhhautocb = function() {};
     routes.starterm.J103B = route('starterm3', [fixes.term.ROBIN, fixes.star.CHALI]);
     routes.starterm.J101 = route('starterm3', [fixes.term.ELATO, fixes.term.TUBBY, fixes.term.SAMMI, fixes.term.PONTI, fixes.term.BUMDI, fixes.term.SMT]);
 
+    routes.starterm.ZGGG = route('starterm3', [fixes.star.CHALI, fixes.term.PICTA, fixes.term.CH, fixes.term.TAMOT, fixes.term.SMT]);
+    routes.starterm.ZGSZ = route('starterm3', [fixes.term.ROBIN, fixes.term.ALLEY, fixes.term.GOBBI, fixes.term.LANDA, fixes.term.COTON]);
+    
     routes.app.RWY34 = route('app2', [fixes.star.MC611, fixes.app.LKCD35D, fixes.sid.PAPA, fixes.app.RW34]);
     routes.app.RWY34A = route('app2', [fixes.star.HAZEL, fixes.app.LKCD35, fixes.app.LKCD35A, fixes.app.LKCD35B, fixes.app.LKCD35C, fixes.app.LKCD35D]);
     routes.app.RWY34B = route('app2', [fixes.term.UJ, fixes.app.ROMEO, fixes.app.ZAOR179, fixes.app.LKCD35C]);
@@ -702,7 +708,7 @@ var vhhhautocb = function() {};
     fixes.term.GODEN = fix(20.5765,114.309028);
     routes.holding.GODEN = route('starterm3', [pos(20.576496,114.309084),pos(20.587767,114.312253),pos(20.597322,114.319400),pos(20.604012,114.329608),pos(20.607030,114.341645),pos(20.606013,114.354059),pos(20.601083,114.365353),pos(20.592835,114.374164),pos(20.582263,114.379429),pos(20.490964,114.387957),pos(20.479697,114.384734),pos(20.470142,114.377593),pos(20.463451,114.367394),pos(20.460432,114.355369),pos(20.461448,114.342966),pos(20.466377,114.331683),pos(20.474625,114.322878),pos(20.485196,114.317616)]);
     fixes.term.OTKUM = fix(22.0595,114.082194);
-    routes.holding.OTKUM = route('starterm3', [pos(22.059491,114.082110),pos(22.068815,114.074619),pos(22.075168,114.064063),pos(22.077791,114.051798),pos(22.076369,114.039305),pos(22.071073,114.028090),pos(22.062542,114.019506),pos(22.051805,114.014589),pos(22.040157,114.013931),pos(21.952511,114.042821),pos(21.943195,114.050389),pos(21.936842,114.060935),pos(21.934218,114.073187),pos(21.935639,114.085668),pos(21.940934,114.096872),pos(21.949464,114.105449),pos(21.960201,114.110363),pos(21.971850,114.111022),pos(22.059491,114.082110)]);
+    routes.holding.OTKUM = route('starterm3', [pos(22.059491,114.082110),pos(22.068815,114.074619),pos(22.075168,114.064063),pos(22.077791,114.051798),pos(22.076369,114.039305),pos(22.071073,114.028090),pos(22.062542,114.019506),pos(22.051805,114.014589),pos(22.040157,114.013931),pos(21.952511,114.042821),pos(21.943195,114.050389),pos(21.936842,114.060935),pos(21.934218,114.073187),pos(21.935639,114.085668),pos(21.940934,114.096872),pos(21.949464,114.105449),pos(21.960201,114.110363),pos(21.971850,114.111022)]);
     
     var show07a = [routes.sid.RWY07R2, routes.sid.RWY07L2, routes.sid.RWY07E, routes.sid.BEKOL3A];
     var show07d = [routes.sid.OCEAN2A, routes.sid.LAKES2A];
@@ -718,6 +724,7 @@ var vhhhautocb = function() {};
     var showmacau = [routes.sidterm.VMMC, routes.starterm.J103A, routes.starterm.J103B, fixes.star.RUNLI, fixes.star.MC611, fixes.star.HAZEL, fixes.sid.PAPA, fixes.star.MC601, fixes.sid.PAPA, fixes.star.HAZEL];
     var showterm = [routes.starterm.J104, routes.starterm.J103, routes.starterm.J101, fixes.term.TAPPO, fixes.term.PICTA, , fixes.term.RAGSO, fixes.term.DASON, fixes.term.COTON, fixes.star.CHALI, 
         fixes.term.NEDLE, fixes.term.PONTI, fixes.term.BUMDI, fixes.term.ROBIN, fixes.term.ARROW, fixes.term.ISBAN, fixes.term.TUBBY];
+    var showterm2 = [routes.starterm.ZGSZ, fixes.term.GOBBI];
     
     var showhold1 = [routes.holding.ABBEY, routes.holding.BETTY, routes.holding.CANTO];
     var showhold2 = [routes.holding.DOVAR, routes.holding.EATON, routes.holding.FISHA, routes.holding.GAMBA, routes.holding.HOCKY, routes.starterm.W28, fixes.term.EATON, fixes.term.MEPUT];
@@ -752,6 +759,9 @@ var vhhhautocb = function() {};
         fixes.sid.BREAM.setVisible( (modevhhh != 3) || (modevmmc == 8 ) );
         showmacau.forEach(function(e) { e.setVisible( modevmmc != 0 ) ; });
         showterm.forEach(function(e) { e.setVisible( modevmmc != 0 || modejterm != 0 || modeohold >= 1 ); });
+        routes.starterm.ZGGG.setVisible( modejterm == 2 || modeohold >= 1 );
+        showterm2.forEach(function(e) { e.setVisible( modejterm == 2 ); });
+        
         showhold1.forEach(function(e) { e.setVisible( modehold >= 1); });
         showhold2.forEach(function(e) { e.setVisible( modehold >= 2); });
         showhold3.forEach(function(e) { e.setVisible( modehold >= 3); });
@@ -830,7 +840,7 @@ var vhhhautocb = function() {};
     $('#secondaryView').append(container);
 
     container = $('<div class="overlay-option"><div class="overlay-option-header">J101,103,104</div></div>');
-    select = $('<select id="overlay-option-jterm"><option value="0">Auto</option><option value="1">On</option></select>');
+    select = $('<select id="overlay-option-jterm"><option value="0">Auto</option><option value="1">On</option><option value="2">w/ZGGG,ZGSZ</option></select>');
     container.append(select);
     $('#secondaryView').append(container);
 

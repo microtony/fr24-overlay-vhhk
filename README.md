@@ -51,10 +51,11 @@ ATC FAQ
    
 6. What hardware and sofware are you using?
 
-   Currently 3 x RTL2832U USB dongles + custom dipole antennae + custom C++ based software on Windows. Streaming software is Icecast 2.
+   Currently 4 x RTL2832U USB dongles + custom dipole antennae + custom C++ based software on Windows. Streaming software is Icecast 2.
    
 |          	| Center Frequency	| Frequencies (Capturing at 2.56Msamples/s)           	|
 |----------	|------------------	|-----------------------------------------------------	|
 | Dongle 1 	| 120.110 MHz      	| 118.925, 119.1, 119.5, 120.6, 121.0, 121.3          	|
 | Dongle 2 	| 123.100 MHz      	| 122.0, 122.95, 123.8, 123.95                        	|
 | Dongle 3 	| 127.650 MHz      	| 126.3, 126.5, 127.05, 127.1, 127.55, 128.2, 128.875 	|
+| Dongle 4 	| 131.000 MHz      	| 132.15                                              	|

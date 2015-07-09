@@ -6,9 +6,9 @@
     js.src = "http://www.microtony.com/fr24/fir.js";
     document.body.appendChild(js);
     js = document.createElement("script");
-    js.src = "http://www.microtony.com/fr24/atc.js";
+    js.src = "http://www.microtony.com/fr24/data.js";
     document.body.appendChild(js);
     js = document.createElement("script");
-    js.src = "http://www.microtony.com/fr24/data.js";
+    js.src = "http://www.microtony.com/fr24/mouse.js";
     document.body.appendChild(js);
 })();

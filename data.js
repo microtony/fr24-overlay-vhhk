@@ -4,7 +4,6 @@
             vhhhauto = data.runway;
             vhhhatc = data.atc;
             vhhhautocb();
-            vhhhatccb();
         });
     };
     setInterval(updater, 150000);

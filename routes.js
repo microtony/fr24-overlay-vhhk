@@ -478,6 +478,14 @@ var vhhhautocb = function() {};
     fixes.airway.AVPAM = fix(23.208333, 111.826667, 'AVPAM');
     fixes.term.LANDA = fix(21.613333, 113.045, 'LANDA');
     
+    fixes.airway.LELIM = fix(22.94, 117.311667, 'LELIM');
+    fixes.airway.LAPUG = fix(22.995, 117.38, 'LAPUG');
+    fixes.airway.KAMEX = fix(23.091667, 117.5, 'KAMEX');
+    fixes.airway.APAKA = fix(23.863333, 118.445, 'APAKA');
+    fixes.airway.OBKEL = fix(25, 119.883333, 'OBKEL');
+    fixes.airway.PONEN = fix(25.625, 120.4, 'PONEN');
+    fixes.airway.NUDPO = fix(26.75, 121.071667, 'NUDPO');
+    fixes.airway.BEGMO = fix(28, 121.833333, 'BEGMO');
     var route = function(type, path) {
         var options = colors[type];
         var path2 = [];
@@ -684,6 +692,7 @@ var vhhhautocb = function() {};
     routes.airway.V20 = route('airway', [fixes.airway.BIGRO, fixes.airway.UDUTI]);
     routes.airway.V21 = route('airway', [fixes.airway.AVPAM, fixes.airway.UDUTI, fixes.airway.MEPOG, fixes.term.UJ]);
     routes.airway.V25 = route('airway', [fixes.airway.AVPAM, fixes.term.UJ]);
+    routes.airway.M503 = route('airway', [fixes.airway.LELIM, fixes.airway.LAPUG, fixes.airway.KAMEX, fixes.airway.APAKA, fixes.airway.OBKEL, fixes.airway.PONEN, fixes.airway.NUDPO, fixes.airway.BEGMO]);
 
     routes.holding.ABBEY = route('star', [pos(22.269093,114.924510),pos(22.277027,114.898600),pos(22.289850,114.880861),pos(22.306100,114.869885),pos(22.324029,114.865765),pos(22.342180,114.868523),pos(22.359100,114.878251),pos(22.373036,114.894990),pos(22.382398,114.920053),pos(22.388114,115.100160),pos(22.380388,115.125868),pos(22.367563,115.143617),pos(22.351312,115.154597),pos(22.333382,115.158717),pos(22.315231,115.155959),pos(22.298311,115.146236),pos(22.284373,115.129507),pos(22.275008,115.104464)]);
     routes.holding.BETTY = route('star', [pos(21.486275,114.559123),pos(21.511285,114.559919),pos(21.530597,114.568307),pos(21.544837,114.582092),pos(21.553441,114.599493),pos(21.555991,114.619009),pos(21.552006,114.639162),pos(21.540967,114.658153),pos(21.521270,114.674695),pos(21.362783,114.729986),pos(21.337804,114.729049),pos(21.318491,114.720674),pos(21.304250,114.706911),pos(21.295644,114.689540),pos(21.293092,114.670059),pos(21.297074,114.649941),pos(21.308111,114.630981),pos(21.327807,114.614461),pos(21.486305,114.558981)]);
@@ -801,7 +810,7 @@ var vhhhautocb = function() {};
         overlay.setMap(null);
       }
       var random = (new Date()).getTime();
-      overlay = new google.maps.GroundOverlay('http://www.microtony.com/lastradar.php?'+random, bounds);
+      overlay = new google.maps.GroundOverlay('http://www.microtony.com/lastradar.php?'+random, bounds, {'clickable': false});
       overlay.setOpacity(0.3);
       overlay.setMap(map);
       $('#overlay-weather-show').html('Update');
@@ -855,4 +864,6 @@ var vhhhautocb = function() {};
     $('#overlay-weather-show').click(wxoverlay);
     $('#overlay-weather-hide').click(wxoverlayhide);
     
+    $('#secondaryView').append('<div id="mousepos" style="padding-top: 4px; text-align: center; color: #AAA"></div>');
+  
 })();

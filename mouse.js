@@ -9,6 +9,6 @@
     } else if (bearing < 100) {
       bearing = '0' + bearing;
     }
-    $('#mousepos').html(mousepos.lat().toFixed(2) + ", " + mousepos.lng().toFixed(2) + ' (' +  dist + 'km / ' + bearing + '°)');
+    $('#mousepos').html(mousepos.lat().toFixed(2) + ", " + mousepos.lng().toFixed(2);// + ' (' +  dist + 'km / ' + bearing + '°)');
   });
 })();

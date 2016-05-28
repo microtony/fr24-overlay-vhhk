@@ -1,6 +1,6 @@
 (function() {
     var updater = function() {
-        $.getJSON("http://www.microtony.com/fr24/data.php?callback=?", function(data) {
+        $.getJSON("https://www.microtony.com/fr24/data.php?callback=?", function(data) {
             vhhhauto = data.runway;
             vhhhatc = data.atc;
             vhhhautocb();

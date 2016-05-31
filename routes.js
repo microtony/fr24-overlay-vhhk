@@ -100,7 +100,9 @@ var vhhhautocb = function() {};
     fixes.term.CONGA = fix(21.734028, 116.784972, 'CONGA');
     fixes.term.SKATE = fix(21.531944, 115.144444, 'SKATE');
     fixes.term.GRUPA = fix(20.845556, 115.949722, 'GRUPA');
-
+    fixes.term.AROXA = fix(22.034167, 116.779167, 'AROXA');
+    fixes.term.NUSTO = fix(22.740833, 117.193889, 'NUSTO');
+    
     fixes.term.LEMON = fix(20.937944, 114.001417, 'LEMON');
     fixes.term.SURFA = fix(19.314167, 112.736444, 'SURFA');
     fixes.term.ALLEY = fix(21.086444, 113.785972, 'ALLEY');
@@ -180,7 +182,9 @@ var vhhhautocb = function() {};
     fixes.sid.COLEY = fix(22.111389, 114.310556, 'COLEY');
 
     fixes.term.MAGOG = fix(22.296111, 115.825000, 'MAGOG');
+    fixes.term.ENPET = fix(22.292500, 115.690000, 'ENPET');
     fixes.term.FISHA = fix(22.282778, 115.336667, 'FISHA');
+    fixes.term.MALKA = fix(22.737222, 117.011667, 'MALKA');
 
     fixes.term.GAMBA = fix(21.318889, 112.926667, 'GAMBA');
     fixes.term.MAPLE = fix(21.374167, 113.095278, 'MAPLE');
@@ -478,7 +482,7 @@ var vhhhautocb = function() {};
     fixes.airway.AVPAM = fix(23.208333, 111.826667, 'AVPAM');
     fixes.term.LANDA = fix(21.613333, 113.045, 'LANDA');
     
-    fixes.airway.LELIM = fix(22.94, 117.311667, 'LELIM');
+    fixes.term.LELIM = fix(22.94, 117.311667, 'LELIM');
     fixes.airway.LAPUG = fix(22.995, 117.38, 'LAPUG');
     fixes.airway.KAMEX = fix(23.091667, 117.5, 'KAMEX');
     fixes.airway.APAKA = fix(23.863333, 118.445, 'APAKA');
@@ -534,7 +538,8 @@ var vhhhautocb = function() {};
 
     routes.starterm.V511 = route('starterm', [fixes.term.DOTMI, fixes.term.MAGOG]);
     routes.starterm.V521 = route('starterm', [fixes.term.ELATO, fixes.term.MAGOG]);
-    routes.starterm.V511521 = route('starterm', [fixes.term.MAGOG, fixes.term.FISHA, fixes.star.ABBEY]);
+    routes.starterm.V591 = route('starterm', [fixes.term.LELIM, fixes.term.MALKA, fixes.term.MAGOG]);
+    routes.starterm.V511521 = route('starterm', [fixes.term.MAGOG, fixes.term.ENPET, fixes.term.FISHA, fixes.star.ABBEY]);
     routes.starterm.V531 = route('starterm', [fixes.term.NOMAN, fixes.term.RAMUS]);
     routes.starterm.V541 = route('starterm', [fixes.term.SABNO, fixes.term.RAMUS]);
     routes.starterm.V531541 = route('starterm', [fixes.term.RAMUS, fixes.term.DOVAR, fixes.term.SONNY, fixes.star.BETTY]);
@@ -578,6 +583,7 @@ var vhhhautocb = function() {};
     routes.sidterm.V12 = route('sidterm', [fixes.sid.PECAN, fixes.term.LEMON, fixes.term.EPDOS]);
     routes.sidterm.V11 = route('sidterm', [fixes.term.LEMON, fixes.term.SURFA, fixes.term.IDOSI]);
     routes.sidterm.V10 = route('sidterm', [fixes.sid.PECAN, fixes.term.ALLEY, fixes.term.DONKI, fixes.term.SIKOU]);
+    routes.sidterm.V13 = route('sidterm', [fixes.term.SOUSA, fixes.term.AROXA, fixes.term.NUSTO, fixes.term.LELIM]);
 
     routes.sid.VMMC34 = route('sid2', [fixes.app.RW16, fixes.sid.LATOPA, fixes.sid.LATOP, fixes.sid.MC420, fixes.sid.MC411, fixes.term.LKC]);
     routes.sid.VMMCT = route('sid2', [fixes.sid.CAMRI, fixes.term.LKC, fixes.app.TD]);
@@ -692,7 +698,7 @@ var vhhhautocb = function() {};
     routes.airway.V20 = route('airway', [fixes.airway.BIGRO, fixes.airway.UDUTI]);
     routes.airway.V21 = route('airway', [fixes.airway.AVPAM, fixes.airway.UDUTI, fixes.airway.MEPOG, fixes.term.UJ]);
     routes.airway.V25 = route('airway', [fixes.airway.AVPAM, fixes.term.UJ]);
-    routes.airway.M503 = route('airway', [fixes.airway.LELIM, fixes.airway.LAPUG, fixes.airway.KAMEX, fixes.airway.APAKA, fixes.airway.OBKEL, fixes.airway.PONEN, fixes.airway.NUDPO, fixes.airway.BEGMO]);
+    routes.airway.M503 = route('airway', [fixes.term.LELIM, fixes.airway.LAPUG, fixes.airway.KAMEX, fixes.airway.APAKA, fixes.airway.OBKEL, fixes.airway.PONEN, fixes.airway.NUDPO, fixes.airway.BEGMO]);
 
     routes.holding.ABBEY = route('star', [pos(22.269093,114.924510),pos(22.277027,114.898600),pos(22.289850,114.880861),pos(22.306100,114.869885),pos(22.324029,114.865765),pos(22.342180,114.868523),pos(22.359100,114.878251),pos(22.373036,114.894990),pos(22.382398,114.920053),pos(22.388114,115.100160),pos(22.380388,115.125868),pos(22.367563,115.143617),pos(22.351312,115.154597),pos(22.333382,115.158717),pos(22.315231,115.155959),pos(22.298311,115.146236),pos(22.284373,115.129507),pos(22.275008,115.104464)]);
     routes.holding.BETTY = route('star', [pos(21.486275,114.559123),pos(21.511285,114.559919),pos(21.530597,114.568307),pos(21.544837,114.582092),pos(21.553441,114.599493),pos(21.555991,114.619009),pos(21.552006,114.639162),pos(21.540967,114.658153),pos(21.521270,114.674695),pos(21.362783,114.729986),pos(21.337804,114.729049),pos(21.318491,114.720674),pos(21.304250,114.706911),pos(21.295644,114.689540),pos(21.293092,114.670059),pos(21.297074,114.649941),pos(21.308111,114.630981),pos(21.327807,114.614461),pos(21.486305,114.558981)]);
